@@ -1,0 +1,22 @@
+{
+  "name": "graph-engineering",
+  "version": "0.0.1",
+  "description": "Design the structures agents work through, not the prompts. Task graphs: split work by its real dependencies, run the diamond pattern (parallel workers, separate verifiers, one owned merge), apply the stop rule and human gates. Context loops: state objects, context isolation, loop caps, and convergence rules that keep multi-agent runs from drifting or looping forever. Knowledge graphs: the 9-stage pipeline (ontology, extraction, fusion, GraphRAG serving) for durable agent memory. Ships a Graph Engineer agent, three skills, and ten workflow commands.",
+  "author": {
+    "name": "Robert Moggach",
+    "email": "rjmoggach@gmail.com"
+  },
+  "homepage": "https://github.com/rjmoggach/claude-graph-engineering-plugin",
+  "repository": "https://github.com/rjmoggach/claude-graph-engineering-plugin",
+  "license": "MIT",
+  "keywords": [
+    "graph-engineering",
+    "agents",
+    "orchestration",
+    "task-graphs",
+    "knowledge-graphs",
+    "context-management",
+    "graphrag",
+    "multi-agent"
+  ]
+}

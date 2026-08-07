@@ -39,6 +39,9 @@ COMPREHENSIVE-REVIEW.md
 skills/dist/
 *.skill
 
+# Packaged plugin release artifact
+*.plugin
+
 # Python bytecode (board_assemble.py etc. — never track compiled artifacts)
 __pycache__/
 *.pyc
