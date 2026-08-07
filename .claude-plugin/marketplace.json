@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "A graph engineering superpower for Claude Code & Desktop: design the structures agents work through — task graphs for subagent orchestration, loop and context management, and knowledge graphs for agent memory.",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
@@ -14,7 +14,7 @@
       "displayName": "Graph Engineering",
       "source": "./plugin",
       "description": "A graph engineering superpower for Claude Code & Desktop: design the structures agents work through — task graphs for subagent orchestration, loop and context management, and knowledge graphs for agent memory.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Robert Moggach"
       }

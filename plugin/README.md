@@ -6,11 +6,12 @@ for loop/context management, knowledge graphs for memory.
 - **Agent**: `graph-engineer` — designs and audits orchestration, loops, and memory
   architecture; returns drawn graphs, state-object specs, guardrails, ontology drafts.
 - **Skills**: `task-graphs` (topology patterns), `context-loops` (state objects,
-  isolation, convergence, checkpoints), `knowledge-graphs` (the 9-stage pipeline with
-  references and teaching mode).
-- **Commands**: `/graph-audit`, `/kg-tutor`, and the chained build steps `/kg-scope`,
-  `/kg-schema`, `/kg-extract`, `/kg-relations`, `/kg-events`, `/kg-fuse`, `/kg-eval`,
-  `/kg-rag`.
+  isolation, convergence, checkpoints — the inner loop), `loop-engineering` (recurring
+  operational loops — autonomy ladder, budgets, safety, the seven patterns),
+  `knowledge-graphs` (the 9-stage pipeline with references and teaching mode).
+- **Commands**: `/graph-audit`, `/loop-design`, `/loop-audit`, `/kg-tutor`, and the
+  chained build steps `/kg-scope`, `/kg-schema`, `/kg-extract`, `/kg-relations`,
+  `/kg-events`, `/kg-fuse`, `/kg-eval`, `/kg-rag`.
 
 Durable graph work lives in the user's project under `context/graph/` (created lazily;
 `runs/` holds transient checkpoints and is gitignorable). The plugin is a design-time

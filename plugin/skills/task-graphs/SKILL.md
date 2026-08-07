@@ -97,7 +97,9 @@ cannot argue back (tests that ran, money that landed), never on its own self-rep
 - **Files needing parallel mutation → per-agent isolation** (worktrees), or reshape the
   split so each file has one writer.
 - Loop termination and state-object design in depth: use the **context-loops** skill.
-  Persistent memory across sessions: use the **knowledge-graphs** skill.
+  A graph that should run recurrently on a schedule (triage, sweepers): use the
+  **loop-engineering** skill. Persistent memory across sessions: use the
+  **knowledge-graphs** skill.
 
 ## Reviewing an existing pipeline
 

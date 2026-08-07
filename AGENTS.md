@@ -14,10 +14,11 @@ hand-maintained Markdown/JSON — there is **no build or assemble step**; what's
 |---|---|
 | `plugin/.claude-plugin/plugin.json` | Plugin manifest |
 | `plugin/agents/*.md` | Agent personas (`graph-engineer`) |
-| `plugin/skills/*/SKILL.md` (+ `references/`) | Skills: `task-graphs`, `context-loops`, `knowledge-graphs` |
-| `plugin/commands/*.md` | Slash commands (`/kg-*`, `/graph-audit`) |
+| `plugin/skills/*/SKILL.md` (+ `references/`) | Skills: `task-graphs`, `context-loops`, `loop-engineering`, `knowledge-graphs` |
+| `plugin/commands/*.md` | Slash commands (`/kg-*`, `/graph-audit`, `/loop-design`, `/loop-audit`) |
 | `.claude-plugin/marketplace.json` | Marketplace entry (`/plugin marketplace add`) |
 | `graph-engineering/` | **Vendored upstream reference** (@Av1dlive's skill + course distillation). Read-only source material — not shipped, don't edit |
+| `loop-engineering/` | **Local-only reference clone** (Cobus Greyling's loop-engineering; gitignored, never committed). Inspiration only — we adapt, never integrate/depend on its tooling. Don't edit |
 | `README.md`, `plugin/README.md`, `CHANGELOG.md` | Docs |
 | `.claude/skills/` | Repo-local workflow skills (`release`, `file-gaps`) — not part of the plugin |
 

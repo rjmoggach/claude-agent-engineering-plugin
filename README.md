@@ -2,7 +2,7 @@
 
 **Design the structures agents work through — not the prompts.**
 
-**Version**: 0.1.0 · **Updated**: 2026-08-07
+**Version**: 0.2.0 · **Updated**: 2026-08-07
 
 Prompt engineers steered the model's words. Loop engineers steered its iterations.
 Graph engineers steer its **topology**. This plugin gives Claude a graph-engineering
@@ -15,9 +15,10 @@ context management — plus the full knowledge-graph pipeline for durable agent 
 |---|---|
 | **`graph-engineer` agent** | A persona that designs and audits orchestration: drawn task graphs, state-object specs, loop guardrails, ontology drafts. |
 | **`task-graphs` skill** | Orchestration topology: the shape test (does the work split?), fake-edge deletion, the diamond pattern (parallel workers → separate verifiers → one owned merge), the stop rule, human gates, four guardrail caps — mapped onto Claude Code subagents and Workflow scripts. |
-| **`context-loops` skill** | Loop & context management: state objects instead of transcripts, context isolation and budgets, compaction at merge points, convergence rules (loop-until-dry, budget-bounded), dedupe-against-seen, checkpoint/resume journaling. |
+| **`context-loops` skill** | Loop & context management within a run: state objects instead of transcripts, context isolation and budgets, compaction at merge points, convergence rules (loop-until-dry, budget-bounded), dedupe-against-seen, checkpoint/resume journaling. |
+| **`loop-engineering` skill** | Recurring operational loops: the six primitives, the L0-L3 autonomy ladder (week one is always report-only), maker/checker split, the operational file set (LOOP.md, STATE.md, budget, run log, constraints, gate), multi-loop coordination, budgets and kill switches, the seven production patterns, and the failure-mode catalog. |
 | **`knowledge-graphs` skill** | The 9-stage pipeline — scope, representation, ontology, entity/relation/event extraction, quality gate, fusion, GraphRAG serving — with distilled course references and a teaching mode. |
-| **10 commands** | `/kg-tutor` (interactive course), `/kg-scope` → `/kg-rag` (eight single-purpose KG build steps that chain into a full pipeline), and `/graph-audit` (review any pipeline as a task graph). |
+| **12 commands** | `/kg-tutor` (interactive course), `/kg-scope` → `/kg-rag` (eight single-purpose KG build steps that chain into a full pipeline), `/graph-audit` (review any pipeline — or another plugin — as a task graph), `/loop-design` (design + scaffold a recurring loop), and `/loop-audit` (readiness review of existing automations). |
 
 ## Install
 
@@ -60,13 +61,17 @@ graph-engineering — Claude Code has no inter-plugin dependency mechanism, and 
 plugin never asks for one. (The `context/` convention is likewise free to adopt without
 installing anything.)
 
-## The two halves
+## The disciplines
 
 1. **Task graphs** — how agents *work*. Nodes are jobs, edges are execution
    dependencies. Split only what never reads each other's results; verify in separate
    contexts; one owner merges; gates sit on irreversible edges; every loop has a cap and
    a convergence rule.
-2. **Knowledge graphs** — what agents *remember*. Nodes are entities and facts, edges
+2. **Loops, at two timescales** — the inner loop (iteration within a run: convergence,
+   state objects, compaction) and the outer loop (recurring automation over days:
+   autonomy ladder, budgets, kill switches, maker/checker). A recurring loop is a task
+   graph executed on a schedule with durable state between runs.
+3. **Knowledge graphs** — what agents *remember*. Nodes are entities and facts, edges
    are relationships with time and provenance. Model before extracting, fuse before
    storing, evaluate at every stage.
 
@@ -77,6 +82,7 @@ installing anything.)
 | `plugin/` | The plugin as installed (agent, skills, commands, manifest) |
 | `.claude-plugin/marketplace.json` | Marketplace entry for `/plugin marketplace add` |
 | `graph-engineering/` | Vendored upstream reference material (not shipped in the plugin) |
+| `loop-engineering/` | Local-only reference clone (gitignored — inspiration, not integration) |
 | `AGENTS.md` | Repo standards & release runbook |
 
 ## Credits
@@ -88,6 +94,9 @@ original lecture materials are redistributed. Task-graph material draws on Googl
 DeepMind × MIT's ["Towards a Science of Scaling Agent Systems"](https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/)
 and Anthropic's published multi-agent engineering work. Builds on the
 [graph-engineering skill](https://github.com/codejunkie99/graph-engineering) by
-[@Av1dlive](https://x.com/Av1dlive) (MIT).
+[@Av1dlive](https://x.com/Av1dlive) (MIT). The loop-engineering skill is an original
+adaptation inspired by
+[cobusgreyling/loop-engineering](https://github.com/cobusgreyling/loop-engineering)
+(Cobus Greyling, MIT) and Addy Osmani's harness/factory/intent-debt framing.
 
 MIT licensed.

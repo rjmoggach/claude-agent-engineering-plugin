@@ -2,6 +2,25 @@
 
 All notable changes to the graph-engineering plugin.
 
+## v0.2.0 - 2026-08-07
+
+### Loop engineering — the outer loop joins the superpower
+
+- New `loop-engineering` skill: recurring, semi-autonomous operational loops — the six
+  primitives, the L0-L3 autonomy ladder (week one is always L1 report-only), the
+  maker/checker split, the operational file set (LOOP.md, STATE.md, loop-budget.md,
+  loop-run-log.md, loop-constraints.md, gate.yaml), budget and kill-switch rules,
+  multi-loop coordination, and safety gates. Three references: the seven production
+  patterns, the failure-mode catalog + anti-patterns, and the 10-section design
+  checklist mapped to readiness levels.
+- New commands: `/loop-design` (fit a pattern, draw the run as a task graph, scaffold
+  the operational files, wire the schedule — L1 by default) and `/loop-audit`
+  (readiness review of existing automations against the checklist and failure modes).
+- `graph-engineer` agent now covers recurring automation; `context-loops` and
+  `task-graphs` cross-reference the inner/outer loop split.
+- Original adaptation inspired by cobusgreyling/loop-engineering (MIT) and Addy
+  Osmani's framing — no dependency on upstream tooling.
+
 ## v0.1.0 - 2026-08-07
 
 ### context/graph workspace + design-time optimizer principle

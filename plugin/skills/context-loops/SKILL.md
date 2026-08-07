@@ -16,6 +16,10 @@ Two resources ruin agent systems when unmanaged: **context** (what each agent ca
 and **iteration** (how many times work repeats). This skill treats both as engineering
 budgets with explicit designs, not defaults.
 
+Scope: iteration **within a run** — the inner loop. Recurring loops that run on a
+schedule over days (triage, sweepers, babysitters) are the **loop-engineering** skill;
+each of that outer loop's runs gets this skill's treatment inside it.
+
 Core principle: **pass state, not transcript.** Work flows through a graph as a compact
 state object; conversation history stays where it happened.
 
