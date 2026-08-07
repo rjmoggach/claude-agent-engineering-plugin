@@ -1,19 +1,19 @@
 ---
 name: release
 description: >-
-  Ship a graph-engineering plugin release end to end. Trigger: "release vX.Y.Z",
+  Ship an agent-engineering plugin release end to end. Trigger: "release vX.Y.Z",
   "ship the release", "cut a release", "/release". Runs the full pipeline — validate gate,
   4-place version bump, CHANGELOG, commit (no Co-Authored-By), tag, push, package,
   GitHub release, and EXPLICIT issue closes (never rely on "Closes #N") — then verifies a
   clean tree. Use after the code/doc changes for a release are already made and validated.
 ---
 
-# Release (graph-engineering)
+# Release (agent-engineering)
 
 Take an already-implemented, already-validated change from "ready" to "shipped" in one
 pass. Do the steps in order; stop and report if any gate fails.
 
-Repo: `rjmoggach/claude-graph-engineering-plugin`. Never force-push `main`.
+Repo: `rjmoggach/claude-agent-engineering-plugin`. Never force-push `main`.
 **No `Co-Authored-By` trailer** on the commit. This repo has no build step — what's in
 `plugin/` is what ships.
 
@@ -80,19 +80,19 @@ git push origin main --tags 2>&1 | tail -2
 
 ## Step 6 — Package + GitHub release
 ```
-(cd plugin && zip -qr ../graph-engineering.plugin . -x '*.DS_Store')
+(cd plugin && zip -qr ../agent-engineering.plugin . -x '*.DS_Store')
 notes="$(awk '/^## vX.Y.Z/{f=1;next} /^## v/{if(f)exit} f' CHANGELOG.md)"
-gh release create vX.Y.Z -R rjmoggach/claude-graph-engineering-plugin \
-  --title "vX.Y.Z — {title}" --notes "$notes" graph-engineering.plugin | tail -1
-rm -f graph-engineering.plugin
+gh release create vX.Y.Z -R rjmoggach/claude-agent-engineering-plugin \
+  --title "vX.Y.Z — {title}" --notes "$notes" agent-engineering.plugin | tail -1
+rm -f agent-engineering.plugin
 ```
 
 ## Step 7 — Close every issue EXPLICITLY
 Do **not** trust `Closes #N` — close each one with a release link:
 ```
 for n in A B C; do
-  gh issue close "$n" -R rjmoggach/claude-graph-engineering-plugin \
-    -c "Shipped in vX.Y.Z — https://github.com/rjmoggach/claude-graph-engineering-plugin/releases/tag/vX.Y.Z" \
+  gh issue close "$n" -R rjmoggach/claude-agent-engineering-plugin \
+    -c "Shipped in vX.Y.Z — https://github.com/rjmoggach/claude-agent-engineering-plugin/releases/tag/vX.Y.Z" \
     && echo "closed #$n"
 done
 ```
@@ -101,8 +101,8 @@ the release references no issues.
 
 ## Step 8 — Verify + report
 ```
-gh release view vX.Y.Z -R rjmoggach/claude-graph-engineering-plugin --json tagName,assets --jq '{tag:.tagName,assets:[.assets[].name]}'
-gh api repos/rjmoggach/claude-graph-engineering-plugin/contents/.claude-plugin/marketplace.json --jq .size   # > 0 or installs break
+gh release view vX.Y.Z -R rjmoggach/claude-agent-engineering-plugin --json tagName,assets --jq '{tag:.tagName,assets:[.assets[].name]}'
+gh api repos/rjmoggach/claude-agent-engineering-plugin/contents/.claude-plugin/marketplace.json --jq .size   # > 0 or installs break
 git status --porcelain | wc -l    # expect 0
 ```
 Report: release URL, the `.plugin` asset present, marketplace.json non-empty on remote,
@@ -114,6 +114,6 @@ verify, say so — don't claim done.
 2. Bump **all 4** version slots (marketplace has two); grep to prove the old string is gone.
 3. **No `Co-Authored-By`.** Never force-push `main`.
 4. **Always `gh issue close` explicitly** — `Closes #N` in a commit only closes the first.
-5. Clean up `graph-engineering.plugin` after the release uploads it (it's gitignored, but
+5. Clean up `agent-engineering.plugin` after the release uploads it (it's gitignored, but
    never leave it in the tree).
 6. Report honestly: verified numbers, not assertions.

@@ -3,7 +3,7 @@ description: Turn a draft schema (from /kg-scope) into a real ontology with hier
 argument-hint: [paste your /kg-scope output, or a path to it]
 ---
 
-Act as an ontology engineer (graph-engineering plugin, knowledge-graphs skill, stage 3;
+Act as an ontology engineer (agent-engineering plugin, knowledge-graphs skill, stage 3;
 read references/modeling.md first). Turn this draft schema into a real ontology.
 
 Draft: $ARGUMENTS

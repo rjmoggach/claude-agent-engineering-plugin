@@ -1,7 +1,7 @@
 ---
 name: file-gaps
 description: >-
-  Turn a pasted batch of plugin gap notes (from real usage of the graph-engineering
+  Turn a pasted batch of plugin gap notes (from real usage of the agent-engineering
   plugin) into cleanly-formatted GitHub issues on this repo. Trigger: "file these gaps",
   "log these as issues", "here are the gaps from the run", "/file-gaps", or any pasted
   markdown list of P0/P1/P2 gaps with "What happened / Fix" shapes. LOG ONLY — it files
@@ -9,7 +9,7 @@ description: >-
   before creating anything.
 ---
 
-# File-gaps (graph-engineering)
+# File-gaps (agent-engineering)
 
 Rob pastes a markdown block of gaps surfaced by real use of the plugin (a workflow
 design session, a `/graph-audit`, a knowledge-graph build, a `/kg-tutor` run, etc.).
@@ -17,7 +17,7 @@ Convert each distinct gap into one well-scoped GitHub issue in a consistent hous
 dedupe against what's already open, and report the created numbers. **Do not implement
 anything** — this is intake, not a fix cycle.
 
-Repo: `rjmoggach/claude-graph-engineering-plugin`.
+Repo: `rjmoggach/claude-agent-engineering-plugin`.
 
 ## Step 1 — Parse the paste into distinct gaps
 Split the block into individual gaps (usually one per `##`/`###` heading or bullet
@@ -29,7 +29,7 @@ note bundles two independent gaps, split them.
 
 ## Step 2 — Dedupe against open issues
 ```
-gh issue list -R rjmoggach/claude-graph-engineering-plugin --state open --limit 60 \
+gh issue list -R rjmoggach/claude-agent-engineering-plugin --state open --limit 60 \
   --json number,title -q '.[] | "\(.number)  \(.title)"' | sort -n
 ```
 If a gap overlaps an existing open issue, **don't file a duplicate** — either fold it in
@@ -64,7 +64,7 @@ w 1.md <<'EOF'
 {body for issue 1}
 EOF
 # … one per gap …
-R=rjmoggach/claude-graph-engineering-plugin
+R=rjmoggach/claude-agent-engineering-plugin
 gh issue create -R "$R" --title "{title 1}" --body-file "$d/1.md" 2>&1 | tail -1
 # … one per gap …
 rm -rf "$d"

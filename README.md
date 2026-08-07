@@ -1,36 +1,38 @@
-# Graph Engineering — a Claude Code & Desktop plugin
+# Agent Engineering — a Claude Code & Desktop plugin
 
 **Design the structures agents work through — not the prompts.**
 
-**Version**: 0.2.0 · **Updated**: 2026-08-07
+**Version**: 0.3.0 · **Updated**: 2026-08-07
 
-Prompt engineers steered the model's words. Loop engineers steered its iterations.
-Graph engineers steer its **topology**. This plugin gives Claude a graph-engineering
-superpower for building better subagent fan-outs and workflows — with real loop and
-context management — plus the full knowledge-graph pipeline for durable agent memory.
+Prompt engineers steered the model's words. This plugin steers everything around the
+words: the **topology** work flows through (graph engineering), the **iteration** it
+runs on (loop engineering), the **attention budget** it spends (context engineering),
+and the **memory** it keeps (knowledge graphs). One superpower for building better
+subagent fan-outs, workflows, recurring automations, and agent memory.
 
 ## What you get
 
 | Component | What it does |
 |---|---|
-| **`graph-engineer` agent** | A persona that designs and audits orchestration: drawn task graphs, state-object specs, loop guardrails, ontology drafts. |
+| **`agent-engineer` agent** | A persona that designs and audits agent machinery: drawn task graphs, state-object specs, loop guardrails, operational-loop designs, context budgets, ontology drafts. |
 | **`task-graphs` skill** | Orchestration topology: the shape test (does the work split?), fake-edge deletion, the diamond pattern (parallel workers → separate verifiers → one owned merge), the stop rule, human gates, four guardrail caps — mapped onto Claude Code subagents and Workflow scripts. |
 | **`context-loops` skill** | Loop & context management within a run: state objects instead of transcripts, context isolation and budgets, compaction at merge points, convergence rules (loop-until-dry, budget-bounded), dedupe-against-seen, checkpoint/resume journaling. |
 | **`loop-engineering` skill** | Recurring operational loops: the six primitives, the L0-L3 autonomy ladder (week one is always report-only), maker/checker split, the operational file set (LOOP.md, STATE.md, budget, run log, constraints, gate), multi-loop coordination, budgets and kill switches, the seven production patterns, and the failure-mode catalog. |
+| **`context-engineering` skill** | The window itself: attention budget and the U-curve, the five degradation patterns (lost-in-middle, poisoning, distraction, confusion, clash) with detection and recovery, write/select/compress/isolate, optimization (cache-stable prompts, masking, compaction, partitioning), and tool design as context contracts. |
 | **`knowledge-graphs` skill** | The 9-stage pipeline — scope, representation, ontology, entity/relation/event extraction, quality gate, fusion, GraphRAG serving — with distilled course references and a teaching mode. |
-| **12 commands** | `/kg-tutor` (interactive course), `/kg-scope` → `/kg-rag` (eight single-purpose KG build steps that chain into a full pipeline), `/graph-audit` (review any pipeline — or another plugin — as a task graph), `/loop-design` (design + scaffold a recurring loop), and `/loop-audit` (readiness review of existing automations). |
+| **14 commands** | `/kg-tutor` (interactive course), `/kg-scope` → `/kg-rag` (eight single-purpose KG build steps that chain into a full pipeline), `/graph-audit` (review any pipeline — or another plugin — as a task graph), `/loop-design` + `/loop-audit` (recurring automation), `/context-audit` (context-hygiene review of an agent setup), and `/task-brief` (pseudo-formal launch briefs for long-horizon runs). |
 
 ## Install
 
 ```
-/plugin marketplace add rjmoggach/claude-graph-engineering-plugin
-/plugin install graph-engineering@claude-graph-engineering-plugin
+/plugin marketplace add rjmoggach/claude-agent-engineering-plugin
+/plugin install agent-engineering@claude-agent-engineering-plugin
 ```
 
 Then try:
 
 - `/graph-audit` on an existing workflow or multi-agent plan
-- "design this workflow" / "should these run in parallel" — the Graph Engineer takes it
+- "design this workflow" / "should these run in parallel" — the Agent Engineer takes it
 - `/kg-tutor` to learn the whole knowledge-graph discipline interactively
 - "build a knowledge graph from my docs" — the 9-stage pipeline runs
 
@@ -57,7 +59,7 @@ This plugin improves *other* plugins and pipelines; it is never a runtime requir
 for them. `/graph-audit` pointed at a plugin repo treats its agents/commands as nodes
 and their documented hand-offs as edges, then emits self-contained rewrites in the
 target's own files and vocabulary. The target must work for users who never installed
-graph-engineering — Claude Code has no inter-plugin dependency mechanism, and this
+agent-engineering — Claude Code has no inter-plugin dependency mechanism, and this
 plugin never asks for one. (The `context/` convention is likewise free to adopt without
 installing anything.)
 
@@ -71,7 +73,11 @@ installing anything.)
    state objects, compaction) and the outer loop (recurring automation over days:
    autonomy ladder, budgets, kill switches, maker/checker). A recurring loop is a task
    graph executed on a schedule with durable state between runs.
-3. **Knowledge graphs** — what agents *remember*. Nodes are entities and facts, edges
+3. **Context engineering** — what agents *attend to*. The window is an attention
+   budget, not a token bucket: place at the edges, filter before loading, mask and
+   compact before the cliff, isolate across subagents, and design tools as context
+   contracts.
+4. **Knowledge graphs** — what agents *remember*. Nodes are entities and facts, edges
    are relationships with time and provenance. Model before extracting, fuse before
    storing, evaluate at every stage.
 
@@ -97,6 +103,9 @@ and Anthropic's published multi-agent engineering work. Builds on the
 [@Av1dlive](https://x.com/Av1dlive) (MIT). The loop-engineering skill is an original
 adaptation inspired by
 [cobusgreyling/loop-engineering](https://github.com/cobusgreyling/loop-engineering)
-(Cobus Greyling, MIT) and Addy Osmani's harness/factory/intent-debt framing.
+(Cobus Greyling, MIT) and Addy Osmani's harness/factory/intent-debt framing. The
+context-engineering skill is an original adaptation inspired by
+[Agent Skills for Context Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)
+(Muratcan Koylan, MIT) and the research it distills.
 
 MIT licensed.

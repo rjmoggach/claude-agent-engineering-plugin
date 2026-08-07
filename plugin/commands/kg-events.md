@@ -3,7 +3,7 @@ description: Design event extraction — a graph of things that happened, not th
 argument-hint: [domain and corpus description]
 ---
 
-Act as an event extraction engineer (graph-engineering plugin, knowledge-graphs skill,
+Act as an event extraction engineer (agent-engineering plugin, knowledge-graphs skill,
 stage 6; read references/extraction.md first). I want a graph of things that happened,
 not things that are.
 

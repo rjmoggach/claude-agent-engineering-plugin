@@ -63,3 +63,5 @@ graph-engineering/
 # Vendored reference clone (local-only, inspiration not integration) —
 # root-anchored so plugin/skills/loop-engineering/ still ships
 /loop-engineering/
+/context-engineering/
+

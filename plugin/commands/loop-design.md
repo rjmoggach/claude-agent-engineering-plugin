@@ -3,7 +3,7 @@ description: Design and scaffold a recurring operational loop — pattern, caden
 argument-hint: [what you want automated, e.g. "triage new issues daily" — or a pattern name]
 ---
 
-Act as the Graph Engineer designing an operational loop (graph-engineering plugin;
+Act as the Agent Engineer designing an operational loop (agent-engineering plugin;
 follow the loop-engineering skill, and read its references/patterns.md and
 references/design-checklist.md first).
 

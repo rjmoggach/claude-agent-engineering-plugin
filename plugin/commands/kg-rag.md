@@ -3,7 +3,7 @@ description: Wire your graph into an agent (GraphRAG) and prove it beats vector 
 argument-hint: [graph description + 3 example question types]
 ---
 
-Act as a retrieval engineer (graph-engineering plugin, knowledge-graphs skill, stage 9;
+Act as a retrieval engineer (agent-engineering plugin, knowledge-graphs skill, stage 9;
 read references/fusion-and-llm.md first). Wire my graph into an agent and prove it beats
 vector search.
 

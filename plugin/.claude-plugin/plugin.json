@@ -1,22 +1,25 @@
 {
-  "name": "graph-engineering",
-  "version": "0.2.0",
-  "description": "Design the structures agents work through, not the prompts. Task graphs: split work by its real dependencies, run the diamond pattern (parallel workers, separate verifiers, one owned merge), apply the stop rule and human gates. Loops at two timescales: state objects, context isolation, and convergence rules within a run; recurring operational loops (autonomy ladder, budgets, kill switches, maker/checker) on a schedule. Knowledge graphs: the 9-stage pipeline (ontology, extraction, fusion, GraphRAG serving) for durable agent memory. Ships a Graph Engineer agent, four skills, and twelve workflow commands.",
+  "name": "agent-engineering",
+  "version": "0.3.0",
+  "description": "Design the structures agents work through, not the prompts. Task graphs: split work by its real dependencies, run the diamond pattern (parallel workers, separate verifiers, one owned merge), apply the stop rule and human gates. Loops at two timescales: state objects, context isolation, and convergence rules within a run; recurring operational loops (autonomy ladder, budgets, kill switches, maker/checker) on a schedule. Knowledge graphs: the 9-stage pipeline (ontology, extraction, fusion, GraphRAG serving) for durable agent memory. Context engineering: attention budget, degradation patterns, compression/optimization, and tool design. Ships an Agent Engineer agent, five skills, and fourteen workflow commands.",
   "author": {
     "name": "Robert Moggach",
     "email": "rjmoggach@gmail.com"
   },
-  "homepage": "https://github.com/rjmoggach/claude-graph-engineering-plugin",
-  "repository": "https://github.com/rjmoggach/claude-graph-engineering-plugin",
+  "homepage": "https://github.com/rjmoggach/claude-agent-engineering-plugin",
+  "repository": "https://github.com/rjmoggach/claude-agent-engineering-plugin",
   "license": "MIT",
   "keywords": [
-    "graph-engineering",
+    "agent-engineering",
     "agents",
     "orchestration",
     "task-graphs",
     "knowledge-graphs",
     "context-management",
     "graphrag",
-    "multi-agent"
+    "multi-agent",
+    "graph-engineering",
+    "loop-engineering",
+    "context-engineering"
   ]
 }

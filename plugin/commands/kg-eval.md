@@ -3,7 +3,7 @@ description: Skeptical review of your knowledge graph — precision/recall sampl
 argument-hint: [what you built + the numbers you're about to claim]
 ---
 
-Act as a skeptical reviewer of my knowledge graph (graph-engineering plugin,
+Act as a skeptical reviewer of my knowledge graph (agent-engineering plugin,
 knowledge-graphs skill, stage 7).
 
 What I built and the numbers: $ARGUMENTS

@@ -1,7 +1,7 @@
 # AGENTS.md — Repo Standards & Release Runbook
 
-Guidance for any agent (or human) working on **claude-graph-engineering-plugin**. This
-repo ships a **Claude Code / Claude Desktop plugin** (the Graph Engineering superpower:
+Guidance for any agent (or human) working on **claude-agent-engineering-plugin**. This
+repo ships a **Claude Code / Claude Desktop plugin** (the Agent Engineering superpower:
 task graphs, context loops, knowledge graphs) plus a marketplace entry. Everything is
 hand-maintained Markdown/JSON — there is **no build or assemble step**; what's in
 `plugin/` is exactly what installs.
@@ -13,12 +13,13 @@ hand-maintained Markdown/JSON — there is **no build or assemble step**; what's
 | Path | Role |
 |---|---|
 | `plugin/.claude-plugin/plugin.json` | Plugin manifest |
-| `plugin/agents/*.md` | Agent personas (`graph-engineer`) |
-| `plugin/skills/*/SKILL.md` (+ `references/`) | Skills: `task-graphs`, `context-loops`, `loop-engineering`, `knowledge-graphs` |
-| `plugin/commands/*.md` | Slash commands (`/kg-*`, `/graph-audit`, `/loop-design`, `/loop-audit`) |
+| `plugin/agents/*.md` | Agent personas (`agent-engineer`) |
+| `plugin/skills/*/SKILL.md` (+ `references/`) | Skills: `task-graphs`, `context-loops`, `loop-engineering`, `context-engineering`, `knowledge-graphs` |
+| `plugin/commands/*.md` | Slash commands (`/kg-*`, `/graph-audit`, `/loop-design`, `/loop-audit`, `/context-audit`, `/task-brief`) |
 | `.claude-plugin/marketplace.json` | Marketplace entry (`/plugin marketplace add`) |
 | `graph-engineering/` | **Vendored upstream reference** (@Av1dlive's skill + course distillation). Read-only source material — not shipped, don't edit |
 | `loop-engineering/` | **Local-only reference clone** (Cobus Greyling's loop-engineering; gitignored, never committed). Inspiration only — we adapt, never integrate/depend on its tooling. Don't edit |
+| `context-engineering/` | **Local-only reference clone** (Muratcan Koylan's Agent-Skills-for-Context-Engineering; gitignored, never committed). Inspiration only. Don't edit |
 | `README.md`, `plugin/README.md`, `CHANGELOG.md` | Docs |
 | `.claude/skills/` | Repo-local workflow skills (`release`, `file-gaps`) — not part of the plugin |
 
@@ -85,21 +86,21 @@ git tag vX.Y.Z
 git push origin main --tags
 
 # 4. Package + GitHub release
-(cd plugin && zip -r ../graph-engineering.plugin . -x '*.DS_Store')
+(cd plugin && zip -r ../agent-engineering.plugin . -x '*.DS_Store')
 notes="$(awk '/^## vX.Y.Z/{f=1;next} /^## v/{if(f)exit} f' CHANGELOG.md)"
-gh release create vX.Y.Z -R rjmoggach/claude-graph-engineering-plugin \
-  --title "vX.Y.Z — <title>" --notes "$notes" graph-engineering.plugin
-rm -f graph-engineering.plugin
+gh release create vX.Y.Z -R rjmoggach/claude-agent-engineering-plugin \
+  --title "vX.Y.Z — <title>" --notes "$notes" agent-engineering.plugin
+rm -f agent-engineering.plugin
 
 # 5. Close referenced issues EXPLICITLY (never rely on "Closes #N"), then verify
-gh release view vX.Y.Z -R rjmoggach/claude-graph-engineering-plugin --json tagName --jq .tagName
+gh release view vX.Y.Z -R rjmoggach/claude-agent-engineering-plugin --json tagName --jq .tagName
 git status --porcelain    # expect empty
 ```
 
 **After any manifest change, verify the remote is install-ready:**
 
 ```bash
-gh api repos/rjmoggach/claude-graph-engineering-plugin/contents/.claude-plugin/marketplace.json --jq .size   # must be > 0
+gh api repos/rjmoggach/claude-agent-engineering-plugin/contents/.claude-plugin/marketplace.json --jq .size   # must be > 0
 ```
 
 An empty `marketplace.json` on `main` silently breaks `/plugin marketplace add` for

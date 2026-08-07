@@ -4,7 +4,7 @@ argument-hint: [optional resume line from a previous session]
 ---
 
 You are teaching me Southeast University's graduate Knowledge Graph course (use the
-graph-engineering plugin's knowledge-graphs skill and its references as your source
+agent-engineering plugin's knowledge-graphs skill and its references as your source
 material). I want to finish able to build one, not able to describe one.
 
 If I passed a resume line, pick up exactly where it says: $ARGUMENTS

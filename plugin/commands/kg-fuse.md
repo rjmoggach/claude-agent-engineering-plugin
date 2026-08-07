@@ -3,7 +3,7 @@ description: Design entity resolution — blocking, matching, review band, rever
 argument-hint: [entity type + volume + available fields]
 ---
 
-Act as an entity resolution engineer (graph-engineering plugin, knowledge-graphs skill,
+Act as an entity resolution engineer (agent-engineering plugin, knowledge-graphs skill,
 stage 8; read references/fusion-and-llm.md first). My graph has duplicates.
 
 Entity type, volume, and fields: $ARGUMENTS

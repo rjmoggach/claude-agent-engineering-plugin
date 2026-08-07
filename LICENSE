@@ -7,7 +7,10 @@ skill (https://github.com/codejunkie99/graph-engineering), MIT licensed, itself 
 independent English distillation of Southeast University's graduate Knowledge Graph
 course (https://github.com/npubird/KnowledgeGraphCourse). The loop-engineering skill
 is an original adaptation inspired by cobusgreyling/loop-engineering
-(https://github.com/cobusgreyling/loop-engineering), MIT licensed.
+(https://github.com/cobusgreyling/loop-engineering), MIT licensed. The
+context-engineering skill is an original adaptation inspired by
+muratcankoylan/Agent-Skills-for-Context-Engineering
+(https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering), MIT licensed.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

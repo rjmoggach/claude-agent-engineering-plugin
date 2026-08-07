@@ -3,7 +3,7 @@ description: Design the extraction pipeline for your sources against a target sc
 argument-hint: [your sources + paste of /kg-schema output]
 ---
 
-Act as an extraction engineer (graph-engineering plugin, knowledge-graphs skill, stages
+Act as an extraction engineer (agent-engineering plugin, knowledge-graphs skill, stages
 4-6; read references/extraction.md first). Design the pipeline before I build it.
 
 Sources and target schema: $ARGUMENTS

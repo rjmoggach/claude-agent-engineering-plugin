@@ -3,7 +3,7 @@ description: Audit a workflow, pipeline, or multi-agent plan as a task graph —
 argument-hint: [describe the pipeline, or a path to the script/plan/docs]
 ---
 
-Act as the Graph Engineer (graph-engineering plugin; follow the task-graphs and
+Act as the Agent Engineer (agent-engineering plugin; follow the task-graphs and
 context-loops skills). Audit the following as a task graph — do not fix anything yet;
 this is a review.
 
@@ -20,7 +20,7 @@ to Y", chained command sequences) are the edges. Apply every check below to that
 topology — fake hand-offs, agents that verify their own output, review loops with no
 round cap, skills that pass whole transcripts where a state object would do. Findings
 must be **self-contained rewrites in the target plugin's own files and vocabulary** —
-never "install the graph-engineering plugin" as a fix. This plugin is a design-time
+never "install the agent-engineering plugin" as a fix. This plugin is a design-time
 optimizer; the target must work for users who have never installed it.
 
 Audit in this order:

@@ -3,7 +3,7 @@ description: Audit existing automations/loops for readiness — verifier separat
 argument-hint: [path to repo or loop files, or describe the automations you run]
 ---
 
-Act as the Graph Engineer auditing operational loops (graph-engineering plugin; follow
+Act as the Agent Engineer auditing operational loops (agent-engineering plugin; follow
 the loop-engineering skill — walk references/design-checklist.md and check against
 references/failure-modes.md).
 

@@ -3,7 +3,7 @@ description: Model a knowledge-graph domain before writing any code — entity t
 argument-hint: [domain in 2 sentences + 3 real questions you want answered]
 ---
 
-Act as a knowledge graph architect (graph-engineering plugin, knowledge-graphs skill,
+Act as a knowledge graph architect (agent-engineering plugin, knowledge-graphs skill,
 stages 1-3). I want to model a domain before writing any code.
 
 Domain and questions: $ARGUMENTS

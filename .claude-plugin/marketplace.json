@@ -1,20 +1,20 @@
 {
-  "name": "claude-graph-engineering-plugin",
+  "name": "claude-agent-engineering-plugin",
   "owner": {
     "name": "Robert Moggach",
     "email": "rjmoggach@gmail.com"
   },
   "metadata": {
-    "description": "A graph engineering superpower for Claude Code & Desktop: design the structures agents work through — task graphs for subagent orchestration, loop and context management, and knowledge graphs for agent memory.",
-    "version": "0.2.0"
+    "description": "An agent engineering superpower for Claude Code & Desktop: design the structures agents work through — task graphs for subagent orchestration, loops at two timescales, context engineering for the attention budget, and knowledge graphs for agent memory.",
+    "version": "0.3.0"
   },
   "plugins": [
     {
-      "name": "graph-engineering",
-      "displayName": "Graph Engineering",
+      "name": "agent-engineering",
+      "displayName": "Agent Engineering",
       "source": "./plugin",
-      "description": "A graph engineering superpower for Claude Code & Desktop: design the structures agents work through — task graphs for subagent orchestration, loop and context management, and knowledge graphs for agent memory.",
-      "version": "0.2.0",
+      "description": "An agent engineering superpower for Claude Code & Desktop: design the structures agents work through — task graphs for subagent orchestration, loops at two timescales, context engineering for the attention budget, and knowledge graphs for agent memory.",
+      "version": "0.3.0",
       "author": {
         "name": "Robert Moggach"
       }

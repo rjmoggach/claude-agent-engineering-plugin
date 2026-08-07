@@ -18,7 +18,10 @@ budgets with explicit designs, not defaults.
 
 Scope: iteration **within a run** — the inner loop. Recurring loops that run on a
 schedule over days (triage, sweepers, babysitters) are the **loop-engineering** skill;
-each of that outer loop's runs gets this skill's treatment inside it.
+each of that outer loop's runs gets this skill's treatment inside it. The window
+itself — attention mechanics, degradation patterns, compression techniques, tool
+surface — is the **context-engineering** skill; this skill decides what state flows
+between nodes, that one decides how any single window is curated.
 
 Core principle: **pass state, not transcript.** Work flows through a graph as a compact
 state object; conversation history stays where it happened.

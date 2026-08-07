@@ -1,6 +1,28 @@
 # Changelog
 
-All notable changes to the graph-engineering plugin.
+All notable changes to the agent-engineering plugin (formerly graph-engineering).
+
+## v0.3.0 - 2026-08-07
+
+### Agent Engineering — umbrella rename + the context discipline
+
+- **Renamed**: repo → `claude-agent-engineering-plugin`, plugin → `agent-engineering`,
+  agent → `agent-engineer`. Graph, loop, and context engineering are one superpower;
+  the name now says so. Existing installs of `graph-engineering` should remove the old
+  marketplace/plugin and reinstall.
+- New `context-engineering` skill: the context window as an attention budget — the
+  five degradation patterns (lost-in-middle, poisoning, distraction, confusion,
+  clash) with detection and recovery, the write/select/compress/isolate framework,
+  optimization in priority order (cache-stable prompts, observation masking,
+  compaction, partitioning), and tool design as context contracts. Three references:
+  degradation, optimization, tool-design.
+- New commands: `/context-audit` (context-hygiene review of an agent setup — window
+  composition, degradation risk, tool surface, cache stability) and `/task-brief`
+  (pseudo-formal launch briefs for long-horizon autonomous runs: success predicates,
+  non-counting outcomes, auditor checklists, persistence paired with gates).
+- Agent and cross-skill routing updated for the context discipline.
+- Original adaptation inspired by muratcankoylan/Agent-Skills-for-Context-Engineering
+  (MIT) — no dependency on upstream tooling.
 
 ## v0.2.0 - 2026-08-07
 

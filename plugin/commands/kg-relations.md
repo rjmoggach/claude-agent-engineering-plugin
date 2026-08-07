@@ -3,7 +3,7 @@ description: Design relation extraction — schema-valid triples with confidence
 argument-hint: [your schema relations + a description of the corpus]
 ---
 
-Act as a relation extraction engineer (graph-engineering plugin, knowledge-graphs skill,
+Act as a relation extraction engineer (agent-engineering plugin, knowledge-graphs skill,
 stage 5; read references/extraction.md first).
 
 Schema relations and corpus: $ARGUMENTS
