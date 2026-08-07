@@ -1,13 +1,12 @@
 # Agent Engineering — a Claude Code & Desktop plugin
 
-**Design the structures agents work through — not the prompts.**
+**Design the structures agents work through.**
 
 **Version**: 0.3.0 · **Updated**: 2026-08-07
 
-Prompt engineers steered the model's words. This plugin steers everything around the
-words: the **topology** work flows through (graph engineering), the **iteration** it
-runs on (loop engineering), the **attention budget** it spends (context engineering),
-and the **memory** it keeps (knowledge graphs). One superpower for building better
+This plugin helps you design four things: the topology work flows through (task
+graphs), the iteration it runs on (loops), the attention budget it spends (context
+engineering), and the memory it keeps (knowledge graphs). Use it to build better
 subagent fan-outs, workflows, recurring automations, and agent memory.
 
 ## What you get
@@ -73,10 +72,9 @@ installing anything.)
    state objects, compaction) and the outer loop (recurring automation over days:
    autonomy ladder, budgets, kill switches, maker/checker). A recurring loop is a task
    graph executed on a schedule with durable state between runs.
-3. **Context engineering** — what agents *attend to*. The window is an attention
-   budget, not a token bucket: place at the edges, filter before loading, mask and
-   compact before the cliff, isolate across subagents, and design tools as context
-   contracts.
+3. **Context engineering** — what agents *attend to*. Treat the window as an
+   attention budget: place at the edges, filter before loading, mask and compact
+   before the cliff, isolate across subagents, and design tools as context contracts.
 4. **Knowledge graphs** — what agents *remember*. Nodes are entities and facts, edges
    are relationships with time and provenance. Model before extracting, fuse before
    storing, evaluate at every stage.

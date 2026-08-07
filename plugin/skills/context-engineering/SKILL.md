@@ -15,11 +15,11 @@ description: >-
 
 # Context Engineering
 
-Prompt engineering crafts the instructions; context engineering curates **everything**
-that enters the window — system prompt, tool definitions, retrieved documents, message
-history, tool outputs. The constraint is not raw token capacity but **attention**: as
-context grows, models degrade in predictable patterns. The goal is the smallest set of
-high-signal tokens that maximizes the likelihood of the outcome.
+Context engineering curates **everything** that enters the window: system prompt,
+tool definitions, retrieved documents, message history, tool outputs. The binding
+constraint is **attention**: as context grows, models degrade in predictable
+patterns. The goal is the smallest set of high-signal tokens that maximizes the
+likelihood of the outcome.
 
 Boundaries inside this plugin: this skill owns the window itself — what's in it, where,
 and how it's compressed. **context-loops** owns run-state mechanics (state objects,

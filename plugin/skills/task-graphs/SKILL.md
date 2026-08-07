@@ -36,7 +36,7 @@ The decision procedure:
 2. Split only that. Everything sequential stays with one agent.
 3. Never let findings merge without one owner of the merge.
 
-If nothing splits, stop here: one agent, no graph. More agents is not a strategy.
+If nothing splits, stop here: one agent, no graph.
 
 ## Step 2 — Delete fake edges
 

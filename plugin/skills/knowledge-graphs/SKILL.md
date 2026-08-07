@@ -14,9 +14,9 @@ description: >-
 # Knowledge Graphs
 
 Knowledge graphs are what agents *remember*: nodes are entities and facts, edges are
-relationships with time and provenance. Core mental model: a knowledge graph is a
-**product with a schema**, not a pile of triples. Quality comes from the pipeline order —
-model the domain BEFORE extracting, fuse BEFORE storing, evaluate at every stage.
+relationships with time and provenance. Treat a knowledge graph as a **product with a
+schema**. Quality comes from the pipeline order: model the domain BEFORE extracting,
+fuse BEFORE storing, evaluate at every stage.
 
 (The other half of graph engineering — how agents *work* — is the **task-graphs** skill;
 loop termination and context budgets are the **context-loops** skill.)

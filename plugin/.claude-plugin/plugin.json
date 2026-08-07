@@ -1,7 +1,7 @@
 {
   "name": "agent-engineering",
   "version": "0.3.0",
-  "description": "Design the structures agents work through, not the prompts. Task graphs: split work by its real dependencies, run the diamond pattern (parallel workers, separate verifiers, one owned merge), apply the stop rule and human gates. Loops at two timescales: state objects, context isolation, and convergence rules within a run; recurring operational loops (autonomy ladder, budgets, kill switches, maker/checker) on a schedule. Knowledge graphs: the 9-stage pipeline (ontology, extraction, fusion, GraphRAG serving) for durable agent memory. Context engineering: attention budget, degradation patterns, compression/optimization, and tool design. Ships an Agent Engineer agent, five skills, and fourteen workflow commands.",
+  "description": "Design the structures agents work through. Task graphs: split work by its real dependencies, run the diamond pattern (parallel workers, separate verifiers, one owned merge), apply the stop rule and human gates. Loops at two timescales: state objects, context isolation, and convergence rules within a run; recurring operational loops (autonomy ladder, budgets, kill switches, maker/checker) on a schedule. Knowledge graphs: the 9-stage pipeline (ontology, extraction, fusion, GraphRAG serving) for durable agent memory. Context engineering: attention budget, degradation patterns, compression/optimization, and tool design. Ships an Agent Engineer agent, five skills, and fourteen workflow commands.",
   "author": {
     "name": "Robert Moggach",
     "email": "rjmoggach@gmail.com"

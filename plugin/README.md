@@ -1,6 +1,6 @@
 # Agent Engineering Plugin
 
-Design the structures agents work through — task graphs for orchestration, loops at
+Design the structures agents work through: task graphs for orchestration, loops at
 two timescales, context engineering for the attention budget, knowledge graphs for
 memory.
 
