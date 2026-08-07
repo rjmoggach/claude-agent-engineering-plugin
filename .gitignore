@@ -1,0 +1,59 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archives
+*.tar
+*.tar.gz
+*.zip
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Review documents (internal use)
+COMPREHENSIVE-REVIEW.md
+*-REVIEW.md
+
+# Skill build artifacts
+skills/dist/
+*.skill
+
+# Python bytecode (board_assemble.py etc. — never track compiled artifacts)
+__pycache__/
+*.pyc
+
+# Assembled plugin (regenerate with: python plugin/assemble.py --package)
+# Not committed — distributed as a GitHub Release asset (see README → Install).
+*.plugin
+
+# superpowers workflow scratch (specs/plans are committed under docs/)
+.superpowers/
+
+# dashboard app build artifacts
+dashboard/node_modules/
+dashboard/dist/
+
+# local tool caches (hook state, not repo content)
+.impeccable/
+graph-engineering/
