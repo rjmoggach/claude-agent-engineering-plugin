@@ -1,4 +1,4 @@
-# Agent Engineering — a Claude Code & Desktop plugin
+# Agent Engineering for Claude Code & Desktop
 
 **Design the structures agents work through.**
 
