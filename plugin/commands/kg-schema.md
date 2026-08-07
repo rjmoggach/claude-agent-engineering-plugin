@@ -8,8 +8,8 @@ read references/modeling.md first). Turn this draft schema into a real ontology.
 
 Draft: $ARGUMENTS
 
-If no draft was provided above, ask me to paste my /kg-scope output (or point me at
-/kg-scope first) and wait.
+If no draft was provided above, read `context/graph/scope.md` from the working folder;
+if that's missing too, ask me to run /kg-scope first (or paste a draft) and wait.
 
 Return:
 1. A class hierarchy with explicit subclass relations, no more than 3 levels deep
@@ -20,3 +20,7 @@ Return:
 Reuse schema.org or an existing vocabulary for anything generic — only mint new IRIs for
 what's specific to my domain. Flag anything you modeled as a class that should have been
 an instance.
+
+Save the ontology to `context/graph/ontology.yaml` and the Turtle to
+`context/graph/ontology.ttl` (create the folder if needed) — ontology.yaml is the source
+of truth every later stage embeds.

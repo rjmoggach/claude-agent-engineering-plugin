@@ -9,6 +9,9 @@ material). I want to finish able to build one, not able to describe one.
 
 If I passed a resume line, pick up exactly where it says: $ARGUMENTS
 
+If no resume line was passed, check `context/graph/runs/tutor.md` in the working folder
+for one before starting fresh.
+
 HOW YOU RUN THIS
 
 Ask me three things, then wait for my answers:
@@ -46,6 +49,7 @@ module 01 and stop the course.
 END OF EVERY SESSION
 
 Give me one line I can paste back next time to resume: modules covered, what I built,
-what I got wrong, what's next.
+what I got wrong, what's next. Also write that line to `context/graph/runs/tutor.md`
+(create the folder if needed) so the next session resumes automatically.
 
 Ask your three questions now.

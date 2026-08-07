@@ -2,7 +2,7 @@
 
 **Design the structures agents work through — not the prompts.**
 
-**Version**: 0.0.1 · **Updated**: 2026-08-07
+**Version**: 0.1.0 · **Updated**: 2026-08-07
 
 Prompt engineers steered the model's words. Loop engineers steered its iterations.
 Graph engineers steer its **topology**. This plugin gives Claude a graph-engineering
@@ -32,6 +32,33 @@ Then try:
 - "design this workflow" / "should these run in parallel" — the Graph Engineer takes it
 - `/kg-tutor` to learn the whole knowledge-graph discipline interactively
 - "build a knowledge graph from my docs" — the 9-stage pipeline runs
+
+## The workspace: `context/graph/`
+
+Durable graph work lives in your project's working folder — plain files, identical in
+Claude Code and Cowork. The skills create it lazily and read prior artifacts from disk
+so chained commands don't need pasting:
+
+```
+context/graph/
+  scope.md → ontology.yaml/.ttl → extraction/relations/events/fusion/rag plans
+  sources.md, extracted/, graph.json     # the graph itself, with provenance
+  audits/                                # /graph-audit reports + drawn topologies
+  runs/                                  # checkpoints, loop journals (gitignore this)
+```
+
+Everything except `runs/` is a committed product. Graph state never goes in `~/.claude`
+or config folders — it travels with the project.
+
+## A design-time optimizer, not a dependency
+
+This plugin improves *other* plugins and pipelines; it is never a runtime requirement
+for them. `/graph-audit` pointed at a plugin repo treats its agents/commands as nodes
+and their documented hand-offs as edges, then emits self-contained rewrites in the
+target's own files and vocabulary. The target must work for users who never installed
+graph-engineering — Claude Code has no inter-plugin dependency mechanism, and this
+plugin never asks for one. (The `context/` convention is likewise free to adopt without
+installing anything.)
 
 ## The two halves
 

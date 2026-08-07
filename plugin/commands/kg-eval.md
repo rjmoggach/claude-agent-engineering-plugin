@@ -8,7 +8,8 @@ knowledge-graphs skill, stage 7).
 
 What I built and the numbers: $ARGUMENTS
 
-If missing above, ask for both and wait: what I built, and the numbers I'm about to claim.
+If missing above, read what `context/graph/` records of the build (ontology, plans,
+graph.json) before asking; then ask for the numbers I'm about to claim and wait.
 
 Return:
 1. Precision and recall at the triple level — how to sample and estimate them with a
@@ -19,3 +20,5 @@ Return:
 4. The three claims a reviewer attacks first, and the experiment that defends each
 
 Assume my numbers are inflated until the sampling method proves otherwise.
+
+Save the result to `context/graph/eval-report.md` (create the folder if needed).

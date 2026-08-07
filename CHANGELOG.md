@@ -2,6 +2,23 @@
 
 All notable changes to the graph-engineering plugin.
 
+## v0.1.0 - 2026-08-07
+
+### context/graph workspace + design-time optimizer principle
+
+- New `context/graph/` workspace convention in the user's working project: scope →
+  ontology → stage plans → graph.json with provenance, `audits/` for reports,
+  `runs/` for transient checkpoints/journals (gitignorable). Skills create it lazily;
+  all `/kg-*` commands now read their predecessor's artifact from disk instead of
+  requiring pastes, and save their output back. `/kg-tutor` auto-resumes from
+  `runs/tutor.md`.
+- Design-time optimizer principle wired through the agent, task-graphs skill, and
+  `/graph-audit`: a new plugin-target mode audits another plugin's agents/commands as a
+  task graph and emits self-contained rewrites in the target's own files — never a
+  runtime dependency on this plugin.
+- Graph state never goes in `~/.claude` or config folders — it travels with the project,
+  working identically in Claude Code and Cowork.
+
 ## v0.0.1 - 2026-08-07
 
 ### Initial release

@@ -9,7 +9,8 @@ not things that are.
 
 Domain and corpus: $ARGUMENTS
 
-If missing above, ask me to describe the domain and corpus, then wait.
+If missing above, check `context/graph/scope.md` and `context/graph/sources.md` for the
+domain and corpus before asking; ask only for what's still unknown, then wait.
 
 Return:
 1. An event type schema: trigger, arguments and their roles, time anchor
@@ -19,3 +20,5 @@ Return:
 4. How to store this so a query can walk a chain backwards from an outcome
 
 Keep event nodes separate from entity nodes. Never collapse a cause into an attribute.
+
+Save the result to `context/graph/events-plan.md` (create the folder if needed).

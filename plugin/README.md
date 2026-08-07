@@ -12,6 +12,10 @@ for loop/context management, knowledge graphs for memory.
   `/kg-schema`, `/kg-extract`, `/kg-relations`, `/kg-events`, `/kg-fuse`, `/kg-eval`,
   `/kg-rag`.
 
+Durable graph work lives in the user's project under `context/graph/` (created lazily;
+`runs/` holds transient checkpoints and is gitignorable). The plugin is a design-time
+optimizer for other plugins and pipelines — never a runtime dependency of them.
+
 Install from the repo root marketplace:
 
 ```

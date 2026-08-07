@@ -8,8 +8,10 @@ Act as an extraction engineer (graph-engineering plugin, knowledge-graphs skill,
 
 Sources and target schema: $ARGUMENTS
 
-If either is missing above, ask for both and wait: my sources (e.g. 400 PDFs, a Postgres
-table, scraped HTML) and my /kg-schema output.
+If the schema is missing above, read `context/graph/ontology.yaml` from the working
+folder. If the sources are missing, ask for them and wait (e.g. 400 PDFs, a Postgres
+table, scraped HTML). If neither the paste nor ontology.yaml exists, point me at
+/kg-schema first.
 
 Return:
 1. Split my sources into structured / semi-structured / unstructured, and the method for
@@ -20,3 +22,6 @@ Return:
    to stop tuning
 
 Do not propose fine-tuning until the prompted baseline has a measured error rate.
+
+Save the plan to `context/graph/extraction-plan.md` and register the sources (with
+provenance notes) in `context/graph/sources.md` (create the folder if needed).

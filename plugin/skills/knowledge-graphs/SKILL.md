@@ -85,6 +85,35 @@ never skip stages 3 (ontology) or 8 (fusion) — they are where real-world graph
   4-6; the surrounding schema, validation, and fusion are what make the output a
   knowledge graph.
 
+## Workspace: context/graph/
+
+Durable graph work lives in the user's working project under `context/graph/` — plain
+files, so the same layout works identically in Claude Code and in Cowork project
+folders. Create it lazily on first write. Before asking the user to paste prior work,
+check whether the artifact is already on disk.
+
+```
+context/graph/
+  scope.md            # stages 1-2 (/kg-scope): domain, questions, draft types
+  ontology.yaml       # stage 3 source of truth (/kg-schema) — every extraction prompt embeds it
+  ontology.ttl        # Turtle serialization of the same ontology
+  sources.md          # registry of ingested sources with provenance
+  extracted/          # per-source, pre-fusion extraction output
+  graph.json          # the fused graph (typed-edges JSON; swap for a DB when scale demands)
+  extraction-plan.md  # stage 4-6 designs (/kg-extract, /kg-relations, /kg-events)
+  relations-plan.md
+  events-plan.md
+  fusion-plan.md      # stage 8 design (/kg-fuse)
+  eval-report.md      # stage 7 findings (/kg-eval)
+  rag-plan.md         # stage 9 design (/kg-rag)
+  audits/             # /graph-audit reports and drawn topologies
+  runs/               # checkpoints, loop journals, tutor progress — transient
+```
+
+Everything except `runs/` is a committed product; recommend the user gitignore
+`context/graph/runs/`. Never store graph state in `~/.claude` or any config folder —
+it must travel with the project.
+
 ## Teaching Mode
 
 When the user wants to LEARN graph engineering (rather than build something), teach it —

@@ -101,6 +101,15 @@ cannot argue back (tests that ran, money that landed), never on its own self-rep
 
 ## Reviewing an existing pipeline
 
+Persist drawn topologies and audit reports to `context/graph/audits/` in the working
+project (create lazily) so later sessions can diff against them.
+
+**When the target is another plugin or reusable system**, the deliverable is
+self-contained rewrites in the target's own files and vocabulary — bake the patterns in.
+Never make the target depend on this plugin at runtime ("install graph-engineering" is
+not a fix); this plugin is a design-time optimizer, and Claude Code has no inter-plugin
+dependency mechanism anyway.
+
 Audit in this order and report per finding — the edge/node, the defect, the fix:
 
 1. Fake edges (steps chained without data flow) → parallelize.

@@ -98,10 +98,15 @@ Every loop declares, up front:
   changed — this is what makes long graphs restartable instead of re-run-from-zero.
 - **Checkpoint the state object at phase boundaries** to a file. A crashed or
   context-compacted session resumes from the last checkpoint, not from memory.
+- **Location**: checkpoints and journals live in the working project at
+  `context/graph/runs/` (create lazily; advise gitignoring `runs/`). Never in `~/.claude`
+  or other config folders — run state must sit next to the project it belongs to, where
+  both Claude Code and Cowork can reach it.
 - Keep node functions **deterministic in their inputs** (no wall-clock, no randomness in
   the routing) so cached replays stay valid.
 - State that must outlive the session graduates from checkpoints to persistent memory —
-  that's the **knowledge-graphs** skill (extraction → fusion → retrieval, incremental).
+  that's the **knowledge-graphs** skill (extraction → fusion → retrieval, incremental),
+  living in `context/graph/` alongside the run state.
 
 ## Failure smells → fixes
 

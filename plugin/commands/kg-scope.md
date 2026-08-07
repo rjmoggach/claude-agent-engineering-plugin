@@ -8,8 +8,9 @@ stages 1-3). I want to model a domain before writing any code.
 
 Domain and questions: $ARGUMENTS
 
-If the domain or the questions are missing above, ask me for both and wait:
-the domain in 2 sentences, and 3 real questions I want the graph to answer.
+If `context/graph/scope.md` exists in the working folder, read it first and treat this
+run as a revision. If the domain or the questions are missing above, ask me for both and
+wait: the domain in 2 sentences, and 3 real questions I want the graph to answer.
 
 Return:
 1. 8-12 entity types, each with the 3-5 attributes that matter and a note on what
@@ -20,3 +21,6 @@ Return:
 
 Do not write code. If a question needs aggregation rather than traversal, say so —
 that's a database, not a graph.
+
+Save the result to `context/graph/scope.md` (create the folder if needed) so /kg-schema
+can pick it up from disk.

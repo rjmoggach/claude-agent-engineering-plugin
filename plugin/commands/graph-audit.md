@@ -13,6 +13,16 @@ If no target was given above, ask me to describe the pipeline or point you at th
 script/plan/docs, then wait. If the target is a path, read the actual files before
 critiquing.
 
+**If the target is a plugin** (a repo containing `.claude-plugin/`, or
+`agents/`/`skills/`/`commands/` directories): its components are the graph. Agents and
+commands are nodes; the hand-offs their docs describe ("then use X", "hands execution
+to Y", chained command sequences) are the edges. Apply every check below to that
+topology — fake hand-offs, agents that verify their own output, review loops with no
+round cap, skills that pass whole transcripts where a state object would do. Findings
+must be **self-contained rewrites in the target plugin's own files and vocabulary** —
+never "install the graph-engineering plugin" as a fix. This plugin is a design-time
+optimizer; the target must work for users who have never installed it.
+
 Audit in this order:
 
 1. **Draw what exists.** A mermaid flowchart of the current topology as actually
@@ -35,3 +45,6 @@ Then return:
   merge owner, and gates marked.
 - A finding list, most severe first: the edge/node, the defect, the concrete fix, and
   what breaks at 10x volume if left alone.
+
+Save the full report to `context/graph/audits/{target-name}-audit.md` in the working
+folder (create the folder if needed) so later audits can diff against it.

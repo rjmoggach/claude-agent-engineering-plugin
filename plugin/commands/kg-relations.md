@@ -8,8 +8,8 @@ stage 5; read references/extraction.md first).
 
 Schema relations and corpus: $ARGUMENTS
 
-If either is missing above, ask for both and wait: my schema's relation list and a
-description of the corpus.
+If the relations are missing above, read them from `context/graph/ontology.yaml` in the
+working folder. If the corpus description is missing, ask for it and wait.
 
 Return:
 1. A prompt that emits only typed triples valid against my schema, each with a confidence
@@ -21,3 +21,5 @@ Return:
 
 Every triple carries provenance. A triple with no evidence span is a hallucination with
 extra steps.
+
+Save the result to `context/graph/relations-plan.md` (create the folder if needed).

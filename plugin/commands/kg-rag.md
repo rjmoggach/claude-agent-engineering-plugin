@@ -9,8 +9,9 @@ vector search.
 
 Graph and question types: $ARGUMENTS
 
-If missing above, ask for both and wait: a description of the graph and 3 example
-question types.
+If missing above, read `context/graph/ontology.yaml` and `context/graph/graph.json`
+(if present) for the graph's shape before asking; then ask for 3 example question types
+and wait.
 
 Return:
 1. The retrieval strategy per question type — entity lookup, k-hop traversal, subgraph
@@ -21,3 +22,5 @@ Return:
    the metric that separates them
 
 If the graph doesn't win on multi-hop questions, it isn't earning its maintenance cost.
+
+Save the result to `context/graph/rag-plan.md` (create the folder if needed).

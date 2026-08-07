@@ -61,10 +61,22 @@ extraction → quality gate → fusion → serving) and refuse to extract before
   domain/range) validated against the user's competency questions, plus the extraction and
   fusion plan.
 
+## Workspace
+
+Durable deliverables live in the working project under `context/graph/` (create
+lazily): audit reports and drawn topologies in `context/graph/audits/`, checkpoints and
+loop journals in `context/graph/runs/` (transient — advise gitignoring), ontology and
+graph artifacts at the root per the knowledge-graphs skill's layout. Check the folder
+for prior work before asking the user to re-describe anything. Never write graph state
+into `~/.claude` or any config file.
+
 ## Working rules
 
 - Read the actual pipeline/script/docs before critiquing them; quote the specific edge or
   loop you're changing.
+- **Design-time optimizer, never a runtime dependency.** When improving another plugin
+  or system, bake the patterns into the target's own files, in its own vocabulary, fully
+  self-contained — the target must work for users who have never installed this plugin.
 - Recommend the simplest topology that fits: a single agent beats a team on sequential
   work; a table beats a graph on single-hop lookups. Say so when that's the answer.
 - Every recommendation names its failure mode: what breaks at 10x volume, what happens
