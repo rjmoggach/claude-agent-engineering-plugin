@@ -15,7 +15,8 @@ memory, harness engineering for the runtime around the model.
   design), `knowledge-graphs` (the 9-stage pipeline with references and teaching mode),
   `harness-engineering` (the six-layer runtime around the model — tool subtraction,
   state handoff, boundary enforcement, recovery; the umbrella over the others).
-- **Commands**: `/graph-audit`, `/loop-design`, `/loop-audit`, `/context-audit`,
+- **Commands**: `/agent-audit` (all four audits in parallel, one merged report),
+  `/graph-audit`, `/loop-design`, `/loop-audit`, `/context-audit`,
   `/harness-audit`, `/task-brief`, `/kg-tutor`, and the chained build steps
   `/kg-scope`, `/kg-schema`, `/kg-extract`, `/kg-relations`, `/kg-events`,
   `/kg-fuse`, `/kg-eval`, `/kg-rag`.

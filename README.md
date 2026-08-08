@@ -2,7 +2,7 @@
 
 **Design the structures agents work through.**
 
-**Version**: 0.4.0 · **Updated**: 2026-08-07
+**Version**: 0.5.0 · **Updated**: 2026-08-07
 
 This plugin helps you design five things: the topology work flows through (task
 graphs), the iteration it runs on (loops), the attention budget it spends (context
@@ -22,7 +22,7 @@ agent systems.
 | **`context-engineering` skill** | The window itself: attention budget and the U-curve, the five degradation patterns (lost-in-middle, poisoning, distraction, confusion, clash) with detection and recovery, write/select/compress/isolate, optimization (cache-stable prompts, masking, compaction, partitioning), and tool design as context contracts. |
 | **`knowledge-graphs` skill** | The 9-stage pipeline — scope, representation, ontology, entity/relation/event extraction, quality gate, fusion, GraphRAG serving — with distilled course references and a teaching mode. |
 | **`harness-engineering` skill** | The runtime around the model (`Harness = Agent − Model`): the six-layer audit surface and ETCLOVG taxonomy, tool-surface subtraction, state handoff and reset semantics, generator/critic separation, boundary enforcement (validators, hooks), backpressure and loop detection, and the engineer-against-repeats rule — the umbrella over the other disciplines. |
-| **15 commands** | `/kg-tutor` (interactive course), `/kg-scope` → `/kg-rag` (eight single-purpose KG build steps that chain into a full pipeline), `/graph-audit` (review any pipeline — or another plugin — as a task graph), `/loop-design` + `/loop-audit` (recurring automation), `/context-audit` (context-hygiene review of an agent setup), `/harness-audit` (six-layer harness review of an agent system), and `/task-brief` (pseudo-formal launch briefs for long-horizon runs). |
+| **16 commands** | `/agent-audit` (the full gamut — all four audits fanned out in parallel, merged by one owner), `/kg-tutor` (interactive course), `/kg-scope` → `/kg-rag` (eight single-purpose KG build steps that chain into a full pipeline), `/graph-audit` (review any pipeline — or another plugin — as a task graph), `/loop-design` + `/loop-audit` (recurring automation), `/context-audit` (context-hygiene review of an agent setup), `/harness-audit` (six-layer harness review of an agent system), and `/task-brief` (pseudo-formal launch briefs for long-horizon runs). |
 
 ## Install
 
@@ -33,6 +33,7 @@ agent systems.
 
 Then try:
 
+- `/agent-audit` on another plugin or agent system — the full gamut in one pass
 - `/graph-audit` on an existing workflow or multi-agent plan
 - `/harness-audit` on an agent system that underperforms despite prompt tuning
 - "design this workflow" / "should these run in parallel" — the Agent Engineer takes it

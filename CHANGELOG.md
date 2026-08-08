@@ -2,6 +2,20 @@
 
 All notable changes to the agent-engineering plugin (formerly graph-engineering).
 
+## v0.5.0 - 2026-08-07
+
+### /agent-audit — the full gamut in one command
+
+- New command: `/agent-audit` — composes the four single-discipline audits
+  (harness, task graph, context, loops) into one pass, run as the plugin's own
+  diamond pattern: a cheap scout (plugin-target detection, loop-evidence check),
+  the four audits fanned out as parallel subagents in isolated contexts (capped at
+  4, structured returns, sequential fallback), and a single merge owner that
+  dedupes cross-lens findings, resolves contradictions, ranks severity, and names
+  the highest-leverage change. Sub-reports save to their standard
+  `context/graph/audits/` paths plus a merged `agent-audit.md`, so re-runs diff
+  against every layer.
+
 ## v0.4.0 - 2026-08-07
 
 ### Harness engineering — the runtime layer above the stack

@@ -16,7 +16,7 @@ hand-maintained Markdown/JSON — there is **no build or assemble step**; what's
 | `plugin/.claude-plugin/plugin.json` | Plugin manifest |
 | `plugin/agents/*.md` | Agent personas (`agent-engineer`) |
 | `plugin/skills/*/SKILL.md` (+ `references/`) | Skills: `task-graphs`, `context-loops`, `loop-engineering`, `context-engineering`, `knowledge-graphs`, `harness-engineering` |
-| `plugin/commands/*.md` | Slash commands (`/kg-*`, `/graph-audit`, `/loop-design`, `/loop-audit`, `/context-audit`, `/harness-audit`, `/task-brief`) |
+| `plugin/commands/*.md` | Slash commands (`/kg-*`, `/agent-audit`, `/graph-audit`, `/loop-design`, `/loop-audit`, `/context-audit`, `/harness-audit`, `/task-brief`) |
 | `.claude-plugin/marketplace.json` | Marketplace entry (`/plugin marketplace add`) |
 | `graph-engineering/` | **Local-only reference clone** (@Av1dlive's skill + course distillation; gitignored, no longer committed). Inspiration only — we adapt, never integrate/depend on its tooling. Don't edit |
 | `loop-engineering/` | **Local-only reference clone** (Cobus Greyling's loop-engineering; gitignored, never committed). Inspiration only — we adapt, never integrate/depend on its tooling. Don't edit |
