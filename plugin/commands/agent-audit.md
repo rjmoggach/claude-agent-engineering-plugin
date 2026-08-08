@@ -26,15 +26,26 @@ One quick pass to shape the run:
 - Is there loop evidence (`LOOP.md`, `STATE.md`, `loop-*.md`, `gate.yaml`,
   `.github/workflows/`, scheduled routines)? If none, skip the loop audit and say
   so in the report rather than inventing findings.
+- Are there prior reports under `context/graph/audits/`? If so, this is a re-run:
+  hand each auditor its predecessor report, and its first job is verifying that
+  every previously claimed fix actually held — a fix that didn't hold outranks a
+  new finding of the same severity. Then it audits what changed since.
 
 ## Step 2 — Run the audits as a diamond
 
 The four audits are independent reviews; none reads another's output. If subagents
 are available, fan them out in parallel — one audit per subagent, each in an
 isolated context carrying only: the target path, its one audit protocol, and the
-return shape below. Hard cap: 4 subagents, no re-spawning. If subagents are not
-available, run the protocols sequentially in this order: harness, graph, context,
-loop.
+return shape below. Subagents do not see the sibling command files on their own —
+give each one its protocol verbatim in the spawn prompt, or the path to its
+command file to read first. Hard cap: 4 subagents, no re-spawning. If subagents
+are not available, run the protocols sequentially in this order: harness, graph,
+context, loop.
+
+Tell every auditor that finding-count is not a quality signal: an honest
+three-finding report beats a padded twelve-finding one, and template-filling —
+findings invented to satisfy a checklist section that doesn't apply to this
+target — is a defect in the audit itself.
 
 Every audit returns findings as structured items, never free prose:
 `{file/component, defect, discipline, severity, concrete fix, what breaks if left}`

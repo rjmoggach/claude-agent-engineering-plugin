@@ -2,6 +2,22 @@
 
 All notable changes to the agent-engineering plugin (formerly graph-engineering).
 
+## v0.5.1 - 2026-08-07
+
+### /agent-audit — protocol handoff + lessons from the first real run
+
+- Subagent protocol handoff made explicit: spawned auditors don't see the sibling
+  command files on their own, so the orchestrator now passes each protocol verbatim
+  in the spawn prompt (or the command-file path to read first).
+- Anti-padding instruction: every auditor is told finding-count is not a quality
+  signal — an honest three-finding report beats a padded twelve, and
+  template-filling against inapplicable checklist sections is a defect in the
+  audit itself.
+- Re-run semantics: when prior reports exist under `context/graph/audits/`, each
+  auditor gets its predecessor and verifies previously claimed fixes actually held
+  (a fix that didn't hold outranks a new finding of the same severity) before
+  auditing what changed.
+
 ## v0.5.0 - 2026-08-07
 
 ### /agent-audit — the full gamut in one command

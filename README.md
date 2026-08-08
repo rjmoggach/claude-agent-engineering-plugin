@@ -2,7 +2,7 @@
 
 **Design the structures agents work through.**
 
-**Version**: 0.5.0 · **Updated**: 2026-08-07
+**Version**: 0.5.1 · **Updated**: 2026-08-07
 
 This plugin helps you design five things: the topology work flows through (task
 graphs), the iteration it runs on (loops), the attention budget it spends (context
