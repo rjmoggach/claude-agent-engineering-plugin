@@ -2,12 +2,14 @@
 
 **Design the structures agents work through.**
 
-**Version**: 0.3.0 · **Updated**: 2026-08-07
+**Version**: 0.4.0 · **Updated**: 2026-08-07
 
-This plugin helps you design four things: the topology work flows through (task
+This plugin helps you design five things: the topology work flows through (task
 graphs), the iteration it runs on (loops), the attention budget it spends (context
-engineering), and the memory it keeps (knowledge graphs). Use it to build better
-subagent fan-outs, workflows, recurring automations, and agent memory.
+engineering), the memory it keeps (knowledge graphs), and the harness that carries
+all of it at runtime (harness engineering). Use it to build better subagent
+fan-outs, workflows, recurring automations, agent memory, and production-reliable
+agent systems.
 
 ## What you get
 
@@ -19,7 +21,8 @@ subagent fan-outs, workflows, recurring automations, and agent memory.
 | **`loop-engineering` skill** | Recurring operational loops: the six primitives, the L0-L3 autonomy ladder (week one is always report-only), maker/checker split, the operational file set (LOOP.md, STATE.md, budget, run log, constraints, gate), multi-loop coordination, budgets and kill switches, the seven production patterns, and the failure-mode catalog. |
 | **`context-engineering` skill** | The window itself: attention budget and the U-curve, the five degradation patterns (lost-in-middle, poisoning, distraction, confusion, clash) with detection and recovery, write/select/compress/isolate, optimization (cache-stable prompts, masking, compaction, partitioning), and tool design as context contracts. |
 | **`knowledge-graphs` skill** | The 9-stage pipeline — scope, representation, ontology, entity/relation/event extraction, quality gate, fusion, GraphRAG serving — with distilled course references and a teaching mode. |
-| **14 commands** | `/kg-tutor` (interactive course), `/kg-scope` → `/kg-rag` (eight single-purpose KG build steps that chain into a full pipeline), `/graph-audit` (review any pipeline — or another plugin — as a task graph), `/loop-design` + `/loop-audit` (recurring automation), `/context-audit` (context-hygiene review of an agent setup), and `/task-brief` (pseudo-formal launch briefs for long-horizon runs). |
+| **`harness-engineering` skill** | The runtime around the model (`Harness = Agent − Model`): the six-layer audit surface and ETCLOVG taxonomy, tool-surface subtraction, state handoff and reset semantics, generator/critic separation, boundary enforcement (validators, hooks), backpressure and loop detection, and the engineer-against-repeats rule — the umbrella over the other disciplines. |
+| **15 commands** | `/kg-tutor` (interactive course), `/kg-scope` → `/kg-rag` (eight single-purpose KG build steps that chain into a full pipeline), `/graph-audit` (review any pipeline — or another plugin — as a task graph), `/loop-design` + `/loop-audit` (recurring automation), `/context-audit` (context-hygiene review of an agent setup), `/harness-audit` (six-layer harness review of an agent system), and `/task-brief` (pseudo-formal launch briefs for long-horizon runs). |
 
 ## Install
 
@@ -31,6 +34,7 @@ subagent fan-outs, workflows, recurring automations, and agent memory.
 Then try:
 
 - `/graph-audit` on an existing workflow or multi-agent plan
+- `/harness-audit` on an agent system that underperforms despite prompt tuning
 - "design this workflow" / "should these run in parallel" — the Agent Engineer takes it
 - `/kg-tutor` to learn the whole knowledge-graph discipline interactively
 - "build a knowledge graph from my docs" — the 9-stage pipeline runs
@@ -78,6 +82,12 @@ installing anything.)
 4. **Knowledge graphs** — what agents *remember*. Nodes are entities and facts, edges
    are relationships with time and provenance. Model before extracting, fuse before
    storing, evaluate at every stage.
+5. **Harness engineering** — the runtime that carries the other four.
+   `Harness = Agent − Model`: prompt engineering optimizes how intent is expressed,
+   context engineering optimizes what information reaches the model, harness
+   engineering optimizes runtime control — tool surface, state handoff, evaluation,
+   constraints, recovery. Audit the six layers before tuning inside one; most
+   systems are missing at least two.
 
 ## Repo layout
 
@@ -85,8 +95,9 @@ installing anything.)
 |---|---|
 | `plugin/` | The plugin as installed (agent, skills, commands, manifest) |
 | `.claude-plugin/marketplace.json` | Marketplace entry for `/plugin marketplace add` |
-| `graph-engineering/` | Vendored upstream reference material (not shipped in the plugin) |
+| `graph-engineering/` | Local-only reference clone (gitignored — inspiration, not integration) |
 | `loop-engineering/` | Local-only reference clone (gitignored — inspiration, not integration) |
+| `context-engineering/` | Local-only reference clone (gitignored — inspiration, not integration) |
 | `AGENTS.md` | Repo standards & release runbook |
 
 ## Credits
@@ -104,6 +115,12 @@ adaptation inspired by
 (Cobus Greyling, MIT) and Addy Osmani's harness/factory/intent-debt framing. The
 context-engineering skill is an original adaptation inspired by
 [Agent Skills for Context Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)
-(Muratcan Koylan, MIT) and the research it distills.
+(Muratcan Koylan, MIT) and the research it distills. The harness-engineering skill is
+an original distillation grounded in Anthropic's engineering guidance
+(["Writing effective tools for agents"](https://www.anthropic.com/engineering/writing-tools-for-agents),
+["Effective context engineering for AI agents"](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)),
+the [Agent Harness Engineering survey](https://openreview.net/pdf?id=eONq7FdiHa) and
+its ETCLOVG taxonomy, [Addy Osmani's agent-harness-engineering essay](https://addyosmani.com/blog/agent-harness-engineering/),
+and the Viv Trivedy / HumanLayer framing of the harness as the deciding component.
 
 MIT licensed.

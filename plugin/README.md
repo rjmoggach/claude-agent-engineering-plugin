@@ -2,19 +2,23 @@
 
 Design the structures agents work through: task graphs for orchestration, loops at
 two timescales, context engineering for the attention budget, knowledge graphs for
-memory.
+memory, harness engineering for the runtime around the model.
 
-- **Agent**: `agent-engineer` — designs and audits orchestration, loops, context, and
-  memory architecture; returns drawn graphs, state-object specs, guardrails,
-  operational-loop designs, context budgets, ontology drafts.
+- **Agent**: `agent-engineer` — designs and audits orchestration, loops, context,
+  memory, and harness architecture; returns drawn graphs, state-object specs,
+  guardrails, operational-loop designs, context budgets, harness scorecards,
+  ontology drafts.
 - **Skills**: `task-graphs` (topology patterns), `context-loops` (state objects,
   isolation, convergence, checkpoints — the inner loop), `loop-engineering` (recurring
   operational loops — autonomy ladder, budgets, safety, the seven patterns),
   `context-engineering` (attention budget, degradation patterns, optimization, tool
-  design), `knowledge-graphs` (the 9-stage pipeline with references and teaching mode).
+  design), `knowledge-graphs` (the 9-stage pipeline with references and teaching mode),
+  `harness-engineering` (the six-layer runtime around the model — tool subtraction,
+  state handoff, boundary enforcement, recovery; the umbrella over the others).
 - **Commands**: `/graph-audit`, `/loop-design`, `/loop-audit`, `/context-audit`,
-  `/task-brief`, `/kg-tutor`, and the chained build steps `/kg-scope`, `/kg-schema`,
-  `/kg-extract`, `/kg-relations`, `/kg-events`, `/kg-fuse`, `/kg-eval`, `/kg-rag`.
+  `/harness-audit`, `/task-brief`, `/kg-tutor`, and the chained build steps
+  `/kg-scope`, `/kg-schema`, `/kg-extract`, `/kg-relations`, `/kg-events`,
+  `/kg-fuse`, `/kg-eval`, `/kg-rag`.
 
 Durable graph work lives in the user's project under `context/graph/` (created lazily;
 `runs/` holds transient checkpoints and is gitignorable). The plugin is a design-time

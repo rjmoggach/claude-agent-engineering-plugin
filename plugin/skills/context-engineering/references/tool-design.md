@@ -4,6 +4,16 @@
 documentation for humans — it loads into the agent's context and steers behavior.
 Every word helps or hurts selection accuracy.)*
 
+## Subtraction first
+
+Tool count is a cost before it is a capability: every definition consumes attention
+and widens the selection distribution. The field's headline result is a production
+team that raised agent success from 80% to 100% by deleting roughly 80% of the
+agent's tools. Before adding a tool, ask which existing ones can go; prefer a few
+high-leverage tools that genuinely expand capability over thin wrappers around
+existing APIs. Selection is probabilistic — no compiler confirms the right tool
+fired, so the authoring choices below decide whether it fires at all.
+
 ## The consolidation principle
 
 If a human engineer cannot say definitively which tool applies in a situation, the
@@ -36,6 +46,11 @@ whole contract.
 
 - Offer concise vs detailed response options and document when to use each; response
   size is context spend.
+- Return semantic, human-readable fields over raw internal IDs — the agent reasons
+  over what it can read.
+- Build in pagination, range selection, filtering, and truncation with sensible
+  defaults. When truncating, say so in the response and steer the agent toward many
+  small targeted calls; silent cuts read as complete data.
 - **Errors must be actionable for the agent**: what went wrong + how to correct —
   retry guidance for transients, a corrected format example for input errors, the
   specific missing fields for incomplete requests. "Failed" is zero recovery signal.

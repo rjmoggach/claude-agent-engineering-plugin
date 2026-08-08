@@ -2,6 +2,32 @@
 
 All notable changes to the agent-engineering plugin (formerly graph-engineering).
 
+## v0.4.0 - 2026-08-07
+
+### Harness engineering — the runtime layer above the stack
+
+- New `harness-engineering` skill: the runtime around the model
+  (`Harness = Agent − Model`) as the umbrella discipline over context, loop, and
+  graph engineering. Covers the six-layer audit surface (context, tools,
+  orchestration, state, evaluation, constraints — most systems are missing at least
+  two), the ETCLOVG reference taxonomy, tool-surface subtraction, state handoff and
+  reset semantics, generator/critic separation, boundary enforcement (validators,
+  hooks), backpressure and loop detection, the engineer-against-repeats rule, and
+  the rationalization loophole. Two references: layers (taxonomies + the harness-only
+  evidence table with dates and caveats + the post-training coupling mechanism) and
+  runtime-control (reset handoff spec, compaction tuning on traces, the hook
+  catalog, backpressure rules, feedback-loop design).
+- New command: `/harness-audit` — six-layer scorecard of an agent system, missing
+  layers named, prompt-stated constraints that belong in hooks, single
+  highest-leverage change.
+- context-engineering's tool-design reference gains the subtraction-first principle
+  and return/truncation design; agent and cross-skill routing updated for the
+  harness layer.
+- Grounded in Anthropic's tool-writing and context-engineering guidance, the Agent
+  Harness Engineering survey (ETCLOVG), and Addy Osmani's and HumanLayer's framing.
+- Repo docs: the `graph-engineering/` reference clone is now local-only and
+  gitignored like the other two; README/AGENTS layout tables updated to match.
+
 ## v0.3.0 - 2026-08-07
 
 ### Agent Engineering — umbrella rename + the context discipline

@@ -59,9 +59,10 @@ dashboard/dist/
 
 # local tool caches (hook state, not repo content)
 .impeccable/
-graph-engineering/
-# Vendored reference clone (local-only, inspiration not integration) —
+
+# Vendored reference clones (local-only, inspiration not integration) —
 # root-anchored so plugin/skills/loop-engineering/ still ships
+/graph-engineering/
 /loop-engineering/
 /context-engineering/
 

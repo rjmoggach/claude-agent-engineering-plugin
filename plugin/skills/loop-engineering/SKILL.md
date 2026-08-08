@@ -25,8 +25,9 @@ Loop    = harness + schedule + state + verification chain
 
 This is the **outer** loop — recurring runs over days. Iteration *within* one run
 (convergence rules, state objects, compaction) is the **context-loops** skill; the
-topology of each run is the **task-graphs** skill. A recurring loop is a task graph
-executed on a schedule with durable state between executions.
+topology of each run is the **task-graphs** skill; the harness itself — tool surface,
+validators and hooks, recovery — is the **harness-engineering** skill. A recurring
+loop is a task graph executed on a schedule with durable state between executions.
 
 ## The six primitives
 

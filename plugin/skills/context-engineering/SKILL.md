@@ -24,8 +24,10 @@ likelihood of the outcome.
 Boundaries inside this plugin: this skill owns the window itself — what's in it, where,
 and how it's compressed. **context-loops** owns run-state mechanics (state objects,
 convergence, checkpoints); **task-graphs** owns splitting work across agents;
-**knowledge-graphs** owns persistent memory. They compose: partitioning (here) creates
-the subagents whose contexts task-graphs and context-loops then govern.
+**knowledge-graphs** owns persistent memory; **harness-engineering** owns the runtime
+around the window — tool execution, validators and hooks, recovery — and treats this
+skill as one of its six layers. They compose: partitioning (here) creates the
+subagents whose contexts task-graphs and context-loops then govern.
 
 ## The attention budget
 

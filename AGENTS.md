@@ -2,7 +2,8 @@
 
 Guidance for any agent (or human) working on **claude-agent-engineering-plugin**. This
 repo ships a **Claude Code / Claude Desktop plugin** (the Agent Engineering superpower:
-task graphs, context loops, knowledge graphs) plus a marketplace entry. Everything is
+task graphs, loops, context engineering, knowledge graphs, harness engineering) plus a
+marketplace entry. Everything is
 hand-maintained Markdown/JSON — there is **no build or assemble step**; what's in
 `plugin/` is exactly what installs.
 
@@ -14,10 +15,10 @@ hand-maintained Markdown/JSON — there is **no build or assemble step**; what's
 |---|---|
 | `plugin/.claude-plugin/plugin.json` | Plugin manifest |
 | `plugin/agents/*.md` | Agent personas (`agent-engineer`) |
-| `plugin/skills/*/SKILL.md` (+ `references/`) | Skills: `task-graphs`, `context-loops`, `loop-engineering`, `context-engineering`, `knowledge-graphs` |
-| `plugin/commands/*.md` | Slash commands (`/kg-*`, `/graph-audit`, `/loop-design`, `/loop-audit`, `/context-audit`, `/task-brief`) |
+| `plugin/skills/*/SKILL.md` (+ `references/`) | Skills: `task-graphs`, `context-loops`, `loop-engineering`, `context-engineering`, `knowledge-graphs`, `harness-engineering` |
+| `plugin/commands/*.md` | Slash commands (`/kg-*`, `/graph-audit`, `/loop-design`, `/loop-audit`, `/context-audit`, `/harness-audit`, `/task-brief`) |
 | `.claude-plugin/marketplace.json` | Marketplace entry (`/plugin marketplace add`) |
-| `graph-engineering/` | **Vendored upstream reference** (@Av1dlive's skill + course distillation). Read-only source material — not shipped, don't edit |
+| `graph-engineering/` | **Local-only reference clone** (@Av1dlive's skill + course distillation; gitignored, no longer committed). Inspiration only — we adapt, never integrate/depend on its tooling. Don't edit |
 | `loop-engineering/` | **Local-only reference clone** (Cobus Greyling's loop-engineering; gitignored, never committed). Inspiration only — we adapt, never integrate/depend on its tooling. Don't edit |
 | `context-engineering/` | **Local-only reference clone** (Muratcan Koylan's Agent-Skills-for-Context-Engineering; gitignored, never committed). Inspiration only. Don't edit |
 | `README.md`, `plugin/README.md`, `CHANGELOG.md` | Docs |
@@ -132,5 +133,6 @@ everyone.
   committed; it's uploaded to the GitHub release then deleted.
 - The marketplace schema uses **camelCase** (`displayName`) — `claude plugin validate .`
   warns on `display_name`; treat warnings as failures.
-- **Don't edit `graph-engineering/`** — vendored upstream reference; our shipped
-  adaptations live in `plugin/skills/`.
+- **Don't edit the reference clones** (`graph-engineering/`, `loop-engineering/`,
+  `context-engineering/`) — all three are local-only, gitignored inspiration; our
+  shipped adaptations live in `plugin/skills/`.
