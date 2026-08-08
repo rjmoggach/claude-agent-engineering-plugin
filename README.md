@@ -11,6 +11,10 @@ all of it at runtime (harness engineering). Use it to build better subagent
 fan-outs, workflows, recurring automations, agent memory, and production-reliable
 agent systems.
 
+> Example run within claude code
+<img width="304" height="89" alt="image" src="https://github.com/user-attachments/assets/a02fb4f7-5034-49de-8fff-1ea8d24d0b6b" />
+
+
 ## What you get
 
 | Component | What it does |
