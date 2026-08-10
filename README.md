@@ -14,6 +14,38 @@ agent systems.
 > Example run within claude code
 <img width="304" height="89" alt="image" src="https://github.com/user-attachments/assets/a02fb4f7-5034-49de-8fff-1ea8d24d0b6b" />
 
+## A Design Optimizer
+
+This plugin improves *other* plugins and pipelines; it is never a runtime requirement
+for them. `/graph-audit` pointed at a plugin repo treats its agents/commands as nodes
+and their documented hand-offs as edges, then emits self-contained rewrites in the
+target's own files and vocabulary. The target must work for users who never installed
+agent-engineering — Claude Code has no inter-plugin dependency mechanism, and this
+plugin never asks for one. (The `context/` convention is likewise free to adopt without
+installing anything.)
+
+## The Disciplines
+
+1. **Task graphs** — how agents *work*. Nodes are jobs, edges are execution
+   dependencies. Split only what never reads each other's results; verify in separate
+   contexts; one owner merges; gates sit on irreversible edges; every loop has a cap and
+   a convergence rule.
+2. **Loops, at two timescales** — the inner loop (iteration within a run: convergence,
+   state objects, compaction) and the outer loop (recurring automation over days:
+   autonomy ladder, budgets, kill switches, maker/checker). A recurring loop is a task
+   graph executed on a schedule with durable state between runs.
+3. **Context engineering** — what agents *attend to*. Treat the window as an
+   attention budget: place at the edges, filter before loading, mask and compact
+   before the cliff, isolate across subagents, and design tools as context contracts.
+4. **Knowledge graphs** — what agents *remember*. Nodes are entities and facts, edges
+   are relationships with time and provenance. Model before extracting, fuse before
+   storing, evaluate at every stage.
+5. **Harness engineering** — the runtime that carries the other four.
+   `Harness = Agent − Model`: prompt engineering optimizes how intent is expressed,
+   context engineering optimizes what information reaches the model, harness
+   engineering optimizes runtime control — tool surface, state handoff, evaluation,
+   constraints, recovery. Audit the six layers before tuning inside one; most
+   systems are missing at least two.
 
 ## What you get
 
@@ -34,6 +66,8 @@ agent systems.
 /plugin marketplace add rjmoggach/claude-agent-engineering-plugin
 /plugin install agent-engineering@claude-agent-engineering-plugin
 ```
+
+...or download from the releases and install the `.plugin` manually.
 
 Then try:
 
@@ -61,38 +95,7 @@ context/graph/
 Everything except `runs/` is a committed product. Graph state never goes in `~/.claude`
 or config folders — it travels with the project.
 
-## A design-time optimizer, not a dependency
 
-This plugin improves *other* plugins and pipelines; it is never a runtime requirement
-for them. `/graph-audit` pointed at a plugin repo treats its agents/commands as nodes
-and their documented hand-offs as edges, then emits self-contained rewrites in the
-target's own files and vocabulary. The target must work for users who never installed
-agent-engineering — Claude Code has no inter-plugin dependency mechanism, and this
-plugin never asks for one. (The `context/` convention is likewise free to adopt without
-installing anything.)
-
-## The disciplines
-
-1. **Task graphs** — how agents *work*. Nodes are jobs, edges are execution
-   dependencies. Split only what never reads each other's results; verify in separate
-   contexts; one owner merges; gates sit on irreversible edges; every loop has a cap and
-   a convergence rule.
-2. **Loops, at two timescales** — the inner loop (iteration within a run: convergence,
-   state objects, compaction) and the outer loop (recurring automation over days:
-   autonomy ladder, budgets, kill switches, maker/checker). A recurring loop is a task
-   graph executed on a schedule with durable state between runs.
-3. **Context engineering** — what agents *attend to*. Treat the window as an
-   attention budget: place at the edges, filter before loading, mask and compact
-   before the cliff, isolate across subagents, and design tools as context contracts.
-4. **Knowledge graphs** — what agents *remember*. Nodes are entities and facts, edges
-   are relationships with time and provenance. Model before extracting, fuse before
-   storing, evaluate at every stage.
-5. **Harness engineering** — the runtime that carries the other four.
-   `Harness = Agent − Model`: prompt engineering optimizes how intent is expressed,
-   context engineering optimizes what information reaches the model, harness
-   engineering optimizes runtime control — tool surface, state handoff, evaluation,
-   constraints, recovery. Audit the six layers before tuning inside one; most
-   systems are missing at least two.
 
 ## Repo layout
 
