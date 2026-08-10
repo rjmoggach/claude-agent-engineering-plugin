@@ -2,7 +2,7 @@
 
 **Design the structures agents work through.**
 
-**Version**: 0.5.1 · **Updated**: 2026-08-07
+**Version**: 0.6.0 · **Updated**: 2026-08-10
 
 This plugin helps you design five things: the topology work flows through (task
 graphs), the iteration it runs on (loops), the attention budget it spends (context
@@ -25,7 +25,7 @@ agent systems.
 | **`loop-engineering` skill** | Recurring operational loops: the six primitives, the L0-L3 autonomy ladder (week one is always report-only), maker/checker split, the operational file set (LOOP.md, STATE.md, budget, run log, constraints, gate), multi-loop coordination, budgets and kill switches, the seven production patterns, and the failure-mode catalog. |
 | **`context-engineering` skill** | The window itself: attention budget and the U-curve, the five degradation patterns (lost-in-middle, poisoning, distraction, confusion, clash) with detection and recovery, write/select/compress/isolate, optimization (cache-stable prompts, masking, compaction, partitioning), and tool design as context contracts. |
 | **`knowledge-graphs` skill** | The 9-stage pipeline — scope, representation, ontology, entity/relation/event extraction, quality gate, fusion, GraphRAG serving — with distilled course references and a teaching mode. |
-| **`harness-engineering` skill** | The runtime around the model (`Harness = Agent − Model`): the six-layer audit surface and ETCLOVG taxonomy, tool-surface subtraction, state handoff and reset semantics, generator/critic separation, boundary enforcement (validators, hooks), backpressure and loop detection, and the engineer-against-repeats rule — the umbrella over the other disciplines. |
+| **`harness-engineering` skill** | The runtime around the model (`Harness = Agent − Model`): the six-layer audit surface and ETCLOVG taxonomy, tool-surface subtraction, state handoff and reset semantics, generator/critic separation, boundary enforcement (validators, hooks), backpressure and loop detection, the engineer-against-repeats rule, and how to prove a change actually improved things (outcome contracts, blind judging, sealed held-out sets, retirement as a valid result) — the umbrella over the other disciplines. |
 | **16 commands** | `/agent-audit` (the full gamut — all four audits fanned out in parallel, merged by one owner), `/kg-tutor` (interactive course), `/kg-scope` → `/kg-rag` (eight single-purpose KG build steps that chain into a full pipeline), `/graph-audit` (review any pipeline — or another plugin — as a task graph), `/loop-design` + `/loop-audit` (recurring automation), `/context-audit` (context-hygiene review of an agent setup), `/harness-audit` (six-layer harness review of an agent system), and `/task-brief` (pseudo-formal launch briefs for long-horizon runs). |
 
 ## Install

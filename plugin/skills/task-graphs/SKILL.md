@@ -61,6 +61,12 @@ plan →  worker 2  → verify → merge → result
   own context misses most of its own mistakes. Give each verifier a *different* question
   (is it correct? is it current? is the source real?) — diverse skeptics catch what
   identical ones cannot.
+- **A verifier choosing between candidates needs a tighter clean room.** The
+  context-loops rule (the verifier sees the claim and how to check it, never the
+  worker's reasoning) is the floor. A verifier comparing two results must also not
+  know which side is which: anonymize the outputs, randomize their order, and withhold
+  what change is being tested and which result you are hoping for. A verifier told
+  what you expect will find it.
 - **One owner merges.** The merge node dedupes, resolves conflicts, and produces the
   single result. Workers never write to the shared result directly.
 

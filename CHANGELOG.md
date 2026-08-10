@@ -2,6 +2,38 @@
 
 All notable changes to the agent-engineering plugin (formerly graph-engineering).
 
+## v0.6.0 - 2026-08-10
+
+### Evaluation — proving a change is actually an improvement
+
+- New `harness-engineering/references/evaluation.md`: the sixth layer was the thinnest
+  thing in the plugin (four bullets, the only layer with no reference) and the only
+  layer scored ABSENT when the plugin audited a real target. It now covers outcome-
+  contract extraction with ends separated from means, evaluation packets, iteration
+  versus sealed held-out sets and replacing tests once iteration has touched them,
+  judge hygiene (anonymized outputs, randomized order, and withholding which result
+  you are hoping for), the conditions worth running including the absent-component
+  control, what counts as a real improvement rather than a lucky or verbose one,
+  retirement as a valid successful outcome, and the authoring test — a component
+  should mostly contain what the model could not reasonably work out on its own.
+- `harness-engineering` SKILL.md: evaluation layer gains version comparison and the
+  absent-component control; the authoring test joins the memory-file rule.
+- `task-graphs`: verifiers that compare candidates get a tighter clean room than
+  verifiers that check a single claim. Extends the context-loops rule rather than
+  restating it.
+- `loop-engineering`: new failure mode "optimizing against the verifier" — pass rate
+  climbs while real outcomes don't, from reused tests, inspected held-out cases, and
+  quietly loosened criteria. Added to `/loop-audit`'s hunt list.
+- Fixes pre-existing drift: the failure-mode catalog had nine entries but SKILL.md
+  advertised eight (notification fatigue was missing). Now ten for ten.
+
+These changes were selected by a blind three-condition comparison on eight scenarios
+built from a frozen outcome contract. The revised guidance beat the current guidance
+on all six scenarios run, four of them outside sampling noise, and held on the sealed
+set. Known open finding, not fixed here: on scenarios where the right answer is to
+stay small or not fire at all, the skill still loses to not loading it. That is an
+activation-boundary problem in the skill's description.
+
 ## v0.5.1 - 2026-08-07
 
 ### /agent-audit — protocol handoff + lessons from the first real run

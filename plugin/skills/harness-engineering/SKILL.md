@@ -99,7 +99,10 @@ consolidation detail:
   (progressive disclosure).
 - **Durable memory files earn their lines**: every rule in an instruction/memory file
   should be traceable to a specific failure it prevents. Keep them lean — accumulated
-  instruction stacks measurably hurt.
+  instruction stacks measurably hurt. The general test for any instruction surface:
+  it should mostly contain what the model could not reasonably work out on its own —
+  this system's facts, conventions, exact thresholds, and the failures that actually
+  happened here. General good practice the model already applies is padding.
 
 ## Evaluation and observation
 
@@ -114,6 +117,12 @@ consolidation detail:
   cannot be improved, only rewritten.
 - **Build evals from real failures**, replay them after every harness change, and
   hold out a set so fixes aren't overfit to the incidents that prompted them.
+- **Comparing two versions is its own discipline.** Extract a frozen outcome
+  contract before editing, design the benchmark before building the candidate,
+  keep judges blind to which side is which, and always run the condition where the
+  component is absent. A component that doesn't beat its own absence is costing
+  context for nothing, and retiring it is a real improvement
+  ([references/evaluation.md](references/evaluation.md)).
 
 ## Constraints and recovery
 
@@ -169,6 +178,11 @@ consolidation detail:
   patterns in depth: the reset handoff spec, compaction tuning on traces, the
   validator/hook catalog, backpressure rules, the engineer-against-repeats
   procedure, and feedback-loop design. Read when hardening a specific harness.
+- [references/evaluation.md](references/evaluation.md) — proving a change is an
+  improvement: outcome-contract extraction (ends vs means), evaluation packets,
+  iteration vs sealed held-out sets, judge hygiene, what counts as a real win,
+  retirement as a valid result, and the authoring test. Read before changing a
+  component you intend to claim is better.
 
 ## Credits
 

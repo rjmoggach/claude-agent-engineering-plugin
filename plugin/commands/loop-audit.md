@@ -21,9 +21,11 @@ For EACH loop found:
    the highest level the evidence supports; flag any loop running above its evidence.
 3. **Hunt the failure modes**: infinite fix loops (attempt counts in state?), state
    rot (stale items? prune step?), verifier theater (does the verifier run tests in a
-   separate context?), token burn (early exit on empty watchlist? budget file?),
-   notification fatigue, missing kill switch, auto-merge without allowlist, shared
-   state without schema, parallel collision (acting_on locks?).
+   separate context?), optimizing against the verifier (same tests every round? a
+   sealed set the maker never sees? who edits the acceptance criteria?), token burn
+   (early exit on empty watchlist? budget file?), notification fatigue, missing kill
+   switch, auto-merge without allowlist, shared state without schema, parallel
+   collision (acting_on locks?).
 4. **Check multi-loop coordination** if more than one loop exists: one owner per
    branch, separate state files, priority order, shared denylist, aggregate budget.
 

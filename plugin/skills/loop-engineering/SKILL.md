@@ -143,9 +143,10 @@ Rules that keep state honest:
   changelog drafter, post-merge cleanup): goal, cadence, risk, phases, state shape,
   gates, cost profile. Read when picking or scaffolding a pattern.
 - [references/failure-modes.md](references/failure-modes.md) — the incident catalog
-  (infinite fix loop, state rot, verifier theater, token burn, over-reach,
-  comprehension debt, parallel collision, escalation failure) and the design
-  anti-patterns behind them. Read when a loop misbehaves or before enabling L2/L3.
+  (infinite fix loop, state rot, verifier theater, optimizing against the verifier,
+  notification fatigue, token burn, over-reach, comprehension debt, parallel collision,
+  escalation failure) and the design anti-patterns behind them. Read when a loop
+  misbehaves or before enabling L2/L3.
 - [references/design-checklist.md](references/design-checklist.md) — the 10-section
   ship-readiness checklist mapped to L0-L3, plus the red flags that stop a rollout.
   Read before enabling any loop and during /loop-audit.

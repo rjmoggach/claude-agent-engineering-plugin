@@ -24,6 +24,15 @@ model/context as the implementer. Fix: verifier must execute test/lint commands 
 quote their output; instructions say "find reasons to reject"; stronger model or
 higher effort on the verifier for unattended loops.
 
+**Optimizing against the verifier (S2).** The loop's pass rate climbs while real
+outcomes don't — fixes clear the check and still get reverted. Causes: the same test
+set reused every round until the loop has effectively memorized it; a held-out case
+inspected to explain a failure and then reused; acceptance criteria quietly loosened to
+match what the maker keeps producing. Fix: keep a sealed set the maker never sees;
+retire any held-out case once it has been inspected and write a fresh one; only humans
+edit acceptance criteria; track outcomes the loop cannot see (reverts, reopened tickets)
+rather than its own pass rate.
+
 **Notification fatigue (S1→S2).** Pings every run; team mutes the bot; real
 escalations die unseen. Fix: notify only when a human decision is required; digest
 mode for report loops; tighten the "high priority" bar in triage.
